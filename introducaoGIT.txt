@@ -52,6 +52,7 @@ Utilização do git
 	* git diff, para ver as diferenças entre o antes e depois das modificações
 	-> não vai mostrar as diferenças caso o arquivo esteja consolidado;
 
+	* git show hascommit | para mostrar as modificações do commit
 
 9- Desfazendo as coisas:
 
@@ -118,8 +119,38 @@ Utilização do git
 	git merge nomedobranch
 	git rebase-branch
 	
+---------------------------------------------------------
 
+14- stash
+
+guardar modificações de forma separada sem commitar; ela não é enviada durante o pull de um repositório remoto;
+
+	git stash
+	git stash apply | aplicar as mudanças guardadas;
+	git stash list
+	git stash clear
+
+15- Alias
+
+	criar atalhos dos comandos mais utilizados
+
+	* git config --global alias.atalho comando
 		
+16- Versionando com tags (bom para quem trabalha com bibliotecas)
 
+	* git tag -a versao -m "anotações"
+		subir as tags
+		git push origin master --tags
+
+17- Reverter Commit
+	//Não perder do histórico as mudanças feitas
+	* git revert hashdocommit | reverter as alterações do commit selecionado; não some com o commit anterior (o que foi selecionado para o git revert)
 	
+18- Apagar tags e branches remotos
+
+	git push origin :versaodatag
+
+	git push origin :nomedobranch
+
+
 	
