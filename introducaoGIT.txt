@@ -1,0 +1,40 @@
+Passos para configurar o git pelo terminal    (1 - 6)
+
+1- git init  | para adicionar os arquivos necessários para o funcionamento do git dentro do diretório atual;
+
+2- git config --global user.name " " | para adicionar um usuário, ideal colocar o mesmo nome que está no bitbucket;
+
+3- git config --global user.email " " | para adicionar o email, o mesmo utilizado no bitbucket;
+
+4- git config -- list | para ver as configurações atuais;
+
+5- para poder utilizar o repositório remoto do bitbucket é necessário criar uma chave ssh e adicionar nas configurações do bitbucket
+	
+	ssh-keygen -C "mesmoemaildobitbucket@asd.com"
+	Depois copiar o conteúdo do arquivo ~/.ssh/id_rsa.pub para o bitbucket
+
+6- Ligando repositório local a um repositório remoto: 
+	
+	git remote add origin https://joaoffnascimento@bitbucket.org/joaoffnascimento/estruturadedados.git
+			-> Nome default para determinar que é a origem do remoto?!
+			-> Pode ser qualquer nome;
+	git remote | para mostrar os repositórios existentes;
+	git remote -v | para mostrar mais informações;
+	git push -u origin master | envia todos os arquivos/modificações do meu repositório origin para o repositório remoto, brach padrão (master);
+		 -> -u para "trackear", não é mais necessário ficar digitando a origem e o destino (origin master);
+
+7- 
+
+8- 
+
+9- 
+
+
+Utilização do git (10-)
+
+10- Os arquivos quando estão dentro do diretório do git, podem assumir diferentes estágios, como : 
+* untracked (o arquivo está no diretório, você pode realizar modificações, mas o git não irá fazer o controle sobre ele);
+* unmodified (ao criar algum projeto ou arquivo, é necessário utilizar o comando git add nomedoarquivo/nomedapasta para incluir o arquivo para o próximo commit);
+* git commit -m "descrição do commit" | para adicionar os arquivos na base de dados do git (arquivos no estágio modified voltarão para unmodified);
+
+11- Desfazendo as coisas
