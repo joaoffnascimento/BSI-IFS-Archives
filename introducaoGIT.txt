@@ -1,4 +1,6 @@
-Passos para configurar o git pelo terminal    (1 - 6)
+Introdução Básica Git
+
+	Passos para configurar o git pelo terminal
 
 1- git init  | para adicionar os arquivos necessários para o funcionamento do git dentro do diretório atual;
 
@@ -7,7 +9,7 @@ Passos para configurar o git pelo terminal    (1 - 6)
 3- git config --global user.email " " | para adicionar o email, o mesmo utilizado no bitbucket;
 
 4- git config -- list | para ver as configurações atuais;
-
+---------------------------------------------
 5- para poder utilizar o repositório remoto do bitbucket é necessário criar uma chave ssh e adicionar nas configurações do bitbucket
 	
 	ssh-keygen -C "mesmoemaildobitbucket@asd.com"
@@ -22,19 +24,102 @@ Passos para configurar o git pelo terminal    (1 - 6)
 	git remote -v | para mostrar mais informações;
 	git push -u origin master | envia todos os arquivos/modificações do meu repositório origin para o repositório remoto, brach padrão (master);
 		 -> -u para "trackear", não é mais necessário ficar digitando a origem e o destino (origin master);
+	git pull para sincronizar origin master;
 
-7- 
-
-8- 
-
-9- 
+	git clone "repositorio" "destino" | utilizar em outra pasta, para pegar os arquivos do repositório remoto para o local;
 
 
-Utilização do git (10-)
+7- Fork | pegar um repositório que não é meu e fazer uma cópia para mim, via interface web;
 
-10- Os arquivos quando estão dentro do diretório do git, podem assumir diferentes estágios, como : 
-* untracked (o arquivo está no diretório, você pode realizar modificações, mas o git não irá fazer o controle sobre ele);
-* unmodified (ao criar algum projeto ou arquivo, é necessário utilizar o comando git add nomedoarquivo/nomedapasta para incluir o arquivo para o próximo commit);
-* git commit -m "descrição do commit" | para adicionar os arquivos na base de dados do git (arquivos no estágio modified voltarão para unmodified);
 
-11- Desfazendo as coisas
+---------------------------------------------
+
+
+
+
+Utilização do git 
+
+8- Os arquivos quando estão dentro do diretório do git, podem assumir diferentes estágios, como : 
+
+	* untracked (o arquivo está no diretório, você pode realizar modificações, mas o git não irá fazer o controle sobre ele);
+
+	* unmodified (ao criar algum projeto ou arquivo, é necessário utilizar o comando git add nomedoarquivo/nomedapasta para incluir o arquivo para o próximo commit);
+
+	* git commit -m "descrição do commit" | para adicionar os arquivos na base de dados do git (arquivos no estágio modified voltarão para unmodified);
+
+	* git commit -am | todos os arquivos modificados;
+
+	* git diff, para ver as diferenças entre o antes e depois das modificações
+	-> não vai mostrar as diferenças caso o arquivo esteja consolidado;
+
+
+9- Desfazendo as coisas:
+
+	Após colocar arquivo no staged (base de dados), e antes de commitar:
+		* git reset HEAD arquivo
+			  -> voltar para para o ponteiro que já estou ?! (tirar da fila do staged);
+	
+	* git checkout arquivo | para remover as mudanças do arquivo, antes de ir para o staged (git add);
+
+	voltar nos commits: 
+
+*git reset --
+		* soft (volta ao commit desejado, mas o arquivo já vai estar no staged com as modificações pronto para ser commitado);
+		* mixed (voltar ao commit, voltar os arquivos para antes do staged (modified));
+		* hard (volta ao commit e apaga tudo o que foi feito nele) ("matar tudo que foi feito no commit")
+		    => comando importante, tomar cuidado pois altera o histórico do commit, atualizar as diferenças com push force;
+
+
+-----------------------------------------------------
+
+10- Branch
+	Braches separados = arquivos separados;
+	Facilmente "desligável";
+	Múltiplas pessoas trabalhando;
+	Evita conflitos;
+	Ponteiro móvel que leva a um commit;
+	outros branches podem apontar para o mesmo commit;
+
+	Criando branch
+		*git checkout -b nomedobranch
+		cria e entra no branch
+		*git branch | para ver os branches
+		*git checkout nomedobranch | para trocar de branch
+		*git branch -D nomedobranch | para excluir um branch
+
+11- Entendendo o Merge
+
+	União dos branches, depois das modificações nos branches diferentes;
+	
+	Um novo commit para deixar "linear" = unir as pontas / ciclo  (unir os branches); 
+
+	Pro
+	* Operação não destrutiva (não movimenta o histórico)
+	Contra
+	* Commit extra apenas para união
+	* Histórico poluido, complicado para ler (árvore com várias e várias linhas);
+
+12- Entendendo o Rebase (mais simples)
+
+	Pegar o commit do outro branch e mover para frente (do outro branch), deixando linear; 
+	aplica todas as mudanças para frente da fila;
+	os dois branches irão apontar para o mesmo commit (linearidade) (passo a passo de cada commit)
+
+	Pro
+	* Evita commits extras
+	* Histórico linear
+	Contra
+	* Perde ordem cronológica (tomar bastante cuidado, pode causar conflitos para outras pessoas)
+
+
+
+13- comandos merge e rebase:
+	
+	git merge nomedobranch
+	git rebase-branch
+	
+
+		
+
+	
+	
