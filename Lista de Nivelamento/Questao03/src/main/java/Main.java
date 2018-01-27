@@ -7,7 +7,7 @@ public class Main {
         int menu = 0;
 
         do {
-            System.out.println("Digite uma opção: ");
+            System.out.println("Digite uma opção: 1 = cadastrar pessoa / 2 = exibir pessoas cadastradas");
             menu = read.nextInt();
             switch (menu) {
                 case 1:
@@ -18,9 +18,6 @@ public class Main {
                     String cpf = read.nextLine();
                     System.out.println("Digite a sua data de nascimento no seguinte modelo dd/mm/yyyy:");
                     String dataNascimento = read.nextLine();
-                    int ano = metodos.anoNascimento(dataNascimento);
-                    int mes = metodos.mesNascimento(dataNascimento);
-                    int dia = metodos.diaNascimento(dataNascimento);
 
                     Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf);
                     if (!metodos.verificarCPF(cpf) && metodos.cadastrarPessoa(pessoa)) {
@@ -28,6 +25,8 @@ public class Main {
                     } else {
                         System.out.println("Pessoa não cadastrada !");
                     }
+                    //Ordenar os cadastros ordem decrescente;
+                    metodos.selectionSort();
                     break;
                 case 2:
                     metodos.exibirPessoas();
