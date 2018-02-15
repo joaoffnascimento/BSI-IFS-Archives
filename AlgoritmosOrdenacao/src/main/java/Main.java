@@ -116,8 +116,6 @@ public class Main {
         for (i = inicio; i <= fim; i++) {
             vetorElementos[i] = vetorAuxiliar[i];
         }
-
-
     }
 
     //---------------------------------------------------------------------------------------//
@@ -162,6 +160,44 @@ public class Main {
 
     /////////////////////////  Quick Sort //////////////////////////////
 
+    public static void troca(int[] vetorElementos, int countEsq, int countDir) {
+        int aux = vetorElementos[countEsq];
+        vetorElementos[countEsq] = vetorElementos[countDir];
+        vetorElementos[countDir] = aux;
+    }
+
+    public static int particao(int[] vetorElementos, int inicio, int fim) {
+        int countEsq, countDir, pivo, posPivo;
+        countEsq = inicio;
+        countDir = fim;
+        posPivo = (inicio + fim) / 2;
+        pivo = vetorElementos[posPivo];
+
+        while (countEsq < countDir) {
+            while (vetorElementos[countEsq] <= pivo) {
+                countEsq++;
+            }
+            while (vetorElementos[countDir] >= pivo) {
+                countDir++;
+            }
+            troca(vetorElementos, countEsq, countDir);
+            countEsq++;
+            countDir--;
+
+        }
+        return countDir;
+    }
+
+    public static void quickSort(int[] vetorElementos, int inicio, int fim) {
+        int posPivo;
+        if (inicio < fim) {
+
+            posPivo = particao(vetorElementos, inicio, fim);
+            quickSort(vetorElementos, inicio, posPivo);
+            quickSort(vetorElementos, posPivo + 1, fim);
+        }
+    }
+
     ////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) {
@@ -178,7 +214,9 @@ public class Main {
             System.out.println("3 - SelectionSort Ordem Crescente:");
             System.out.println("4 - SelectionSort Ordem Decrescente:");
             System.out.println("5 - MergeSort: ");
-            System.out.println("6 - Exibir vetor: ");
+            System.out.println("6 - QuickSort: ");
+            System.out.println("7 - Unir 2 vetores Ordenados: ");
+            System.out.println("20 - Exibir vetor: ");
             System.out.println("0 - Sair: ");
             esc = read.nextInt();
 
@@ -199,7 +237,7 @@ public class Main {
                     merge(vetorElementos, 0, vetorElementos.length - 1);
                     break;
                 case 6:
-                    exibirVetor(vetorElementos);
+                    quickSort(vetorElementos,0,vetorElementos.length - 1);
                     break;
                 case 7:
 
@@ -209,7 +247,9 @@ public class Main {
                     unirDoisVetoresOrdenados(par, impar, resultado);
                     exibirVetor(resultado);
 
-
+                    break;
+                case 20:
+                    exibirVetor(vetorElementos);
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
