@@ -54,9 +54,30 @@ public class Main {
     //////////////////////// Selection Sort ////////////////////////////
 
     public static void selectionSortDecrescente(int[] vetorElementos) {
+        int indiceMaiorValor;
+        for(int i = 0; i < vetorElementos.length; i++){
+            indiceMaiorValor = i;
+            for (int j = i+1; j < vetorElementos.length; j++) {
+                if(vetorElementos[j] >= vetorElementos[i]){
+                    indiceMaiorValor = j;
+                }
+                troca(vetorElementos, i, indiceMaiorValor);
+            }
+        }
     }
 
     public static void selectionSortCrescente(int[] vetorElementos) {
+        for (int i = 0; i < vetorElementos.length; i++) {
+            int indiceMenorValor = i;
+
+            for (int j = i + 1; j < vetorElementos.length; j++) {
+                if (vetorElementos[j] <= vetorElementos[indiceMenorValor]) {
+                    indiceMenorValor = j;
+                }
+                troca(vetorElementos, i, indiceMenorValor);
+            }
+
+        }
     }
 
     //////////////////////// Inserction Sort ////////////////////////////
@@ -174,16 +195,17 @@ public class Main {
         pivo = vetorElementos[posPivo];
 
         while (countEsq < countDir) {
-            while (vetorElementos[countEsq] <= pivo) {
+            while (vetorElementos[countEsq] < pivo) {
                 countEsq++;
             }
-            while (vetorElementos[countDir] >= pivo) {
-                countDir++;
+            while (vetorElementos[countDir] > pivo) {
+                countDir--;
             }
-            troca(vetorElementos, countEsq, countDir);
-            countEsq++;
-            countDir--;
-
+            if (countEsq < countDir) {
+                troca(vetorElementos, countEsq, countDir);
+                countEsq++;
+                countDir--;
+            }
         }
         return countDir;
     }
@@ -237,7 +259,7 @@ public class Main {
                     merge(vetorElementos, 0, vetorElementos.length - 1);
                     break;
                 case 6:
-                    quickSort(vetorElementos,0,vetorElementos.length - 1);
+                    quickSort(vetorElementos, 0, vetorElementos.length - 1);
                     break;
                 case 7:
 
