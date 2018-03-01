@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pilha implements IPilha{
     public Object [] pilha;
     public int indicePilha;
@@ -11,13 +13,14 @@ public class Pilha implements IPilha{
     }
 
     @Override
-    public void empilhar(long dado) {
-
+    public void empilhar(Object dado) {
+        indicePilha++;
+        pilha[indicePilha] = dado;
     }
 
     @Override
-    public long desempilhar() {
-        return 0;
+    public Object desempilhar() {
+        return pilha[indicePilha--];
     }
 
     @Override
@@ -37,5 +40,24 @@ public class Pilha implements IPilha{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Pilha{" +
+                "pilha=" + Arrays.toString(pilha) +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        Pilha pilha = new Pilha();
+        pilha.inicializar(10);
+        System.out.println(pilha.estahCheia());
+        System.out.println(pilha.estahVazia());
+        pilha.empilhar("teste");
+        pilha.empilhar(1);
+        System.out.println(pilha.desempilhar());
+        System.out.println(pilha.desempilhar());
+        System.out.println(pilha);
     }
 }
