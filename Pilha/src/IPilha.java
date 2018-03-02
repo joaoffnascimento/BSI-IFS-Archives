@@ -1,10 +1,15 @@
 public interface IPilha {
     void inicializar(int qtdElementos);
+
     void empilhar(Object dado);
+
     Object desempilhar();
+
     Boolean estahVazia();
+
     Boolean estahCheia();
 
+    //----------------------------------------------------------------------//
     /*Interface Comparable
     Método / restrição (não utilizar object)
     public class pessoa implements IComparable{
@@ -20,7 +25,19 @@ public interface IPilha {
 
     Implementar um programa que informa os passos para solucionar o jogo torre de hanoi que usa 3 pinos e n discos;
     discos id num, discos mais pesados quebram os mais leves.
-    
+
     }
      */
+
+    //Icomparable
+        /*
+        Object push();
+        void pop (object o);
+        -----------------
+        IComparable
+        push();
+        void pop (Icomparable i);
+
+         */
+    //----------------------------------------------------------------------//
 }

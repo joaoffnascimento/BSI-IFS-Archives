@@ -19,7 +19,7 @@ public class Pilha implements IPilha {
 
     @Override
     public void empilhar(Object dado) throws PilhaCheiaException {
-        if(this.estahCheia()){
+        if (this.estahCheia()) {
             throw new PilhaCheiaException("Pilha cheia.");
         }
         indicePilha++;
@@ -28,7 +28,10 @@ public class Pilha implements IPilha {
     }
 
     @Override
-    public Object desempilhar() {
+    public Object desempilhar() throws PilhaVaziaException {
+        if (this.estahVazia()) {
+            throw new PilhaVaziaException("Pilha vazia.");
+        }
         return pilha[indicePilha--];
     }
 
