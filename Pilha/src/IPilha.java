@@ -11,6 +11,16 @@ public interface IPilha {
     http://blog.caelum.com.br/ordenando-colecoes-com-comparable-e-comparator/
     operação crud
              Create, Read, Update e Delete
+    operacoes extras {
+    pesquisar por nome salário
+    listar as idades e a qtd de ocorrencias
+    listar pessoas c/ salário maior que a media
+
+    ------------------------------
+
+    Implementar um programa que informa os passos para solucionar o jogo torre de hanoi que usa 3 pinos e n discos;
+    discos id num, discos mais pesados quebram os mais leves.
+    
     }
      */
 }
