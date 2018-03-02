@@ -1,9 +1,14 @@
 import java.util.Arrays;
 
-public class Pilha implements IPilha{
-    public Object [] pilha;
+public class Pilha implements IPilha {
+    //Exceções pilhaCheia e pilhaVazia
+
+    public Object[] pilha;
     public int indicePilha;
 
+    public int getIndicePilha() {
+        return indicePilha + 1;
+    }
 
     @Override
     public void inicializar(int qtdElementos) {
@@ -13,9 +18,13 @@ public class Pilha implements IPilha{
     }
 
     @Override
-    public void empilhar(Object dado) {
+    public void empilhar(Object dado) throws PilhaCheiaException {
+        if(this.estahCheia()){
+            throw new PilhaCheiaException("Pilha cheia.");
+        }
         indicePilha++;
         pilha[indicePilha] = dado;
+
     }
 
     @Override
@@ -36,7 +45,7 @@ public class Pilha implements IPilha{
 
     @Override
     public Boolean estahCheia() {
-        if(indicePilha == pilha.length-1){
+        if (indicePilha == pilha.length - 1) {
             return true;
         }
         return false;
@@ -47,17 +56,5 @@ public class Pilha implements IPilha{
         return "Pilha{" +
                 "pilha=" + Arrays.toString(pilha) +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Pilha pilha = new Pilha();
-        pilha.inicializar(10);
-        System.out.println(pilha.estahCheia());
-        System.out.println(pilha.estahVazia());
-        pilha.empilhar("teste");
-        pilha.empilhar(1);
-        System.out.println(pilha.desempilhar());
-        System.out.println(pilha.desempilhar());
-        System.out.println(pilha);
     }
 }
