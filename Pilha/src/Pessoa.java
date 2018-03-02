@@ -43,4 +43,13 @@ public class Pessoa {
                 ", idade = " + idade +
                 ']';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean result = false;
+        if (this.getNome() == ((Pessoa)o).getNome()) {
+            result = true;
+        }
+        return result;
+    }
 }
