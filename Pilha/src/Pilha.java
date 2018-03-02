@@ -60,4 +60,8 @@ public class Pilha implements IPilha {
                 "pilha=" + Arrays.toString(pilha) +
                 '}';
     }
+
+    public int tamanhoPilha(){
+        return pilha.length-1;
+    }
 }

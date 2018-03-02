@@ -15,7 +15,7 @@ public interface IPilha {
     public class pessoa implements IComparable{
     http://blog.caelum.com.br/ordenando-colecoes-com-comparable-e-comparator/
     operação crud
-             Create, Read, Update e Delete
+             Create, Read, Update (atualizar dados da pessoa) e Delete
     operacoes extras {
     pesquisar por nome salário
     listar as idades e a qtd de ocorrencias
