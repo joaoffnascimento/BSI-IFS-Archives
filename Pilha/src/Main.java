@@ -2,9 +2,19 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void listarPessoas(int tamanhoPilha, Pilha pilha){
-        for (int i = 0; i <= tamanhoPilha; i++){
-            pilha.desempilhar();
+    public static void listarPessoas(Pilha pilha){
+        for (int i = 0; i <= pilha.getIndicePilha(); i++){
+            try{
+                System.out.println(pilha.desempilhar());
+            } catch (PilhaVaziaException pilhaVazia){
+                System.out.println("Você já listou todas as pessoas!");
+            }
+        }
+    }
+
+    public static void atualizarDados(Pilha pilha){
+        for (int i = 0; i < pilha.getIndicePilha(); i++) {
+            Pessoa pessoa = (Pessoa) pilha.desempilhar();
         }
     }
 
@@ -25,11 +35,20 @@ public class Main {
 
             switch (menu){
                 case 1:
-                    Pessoa pessoa = new Pessoa("jose", 450, 18);
+                    System.out.println("Digite o nome da pessoa: ");
+                    read.nextLine();
+                    String nome = read.nextLine();
+                    System.out.println("Digite a idade da pessoa: ");
+                    int idade = read.nextInt();
+                    System.out.println("Digite o salário da pessoa: ");
+                    float salario = read.nextFloat();
+                    Pessoa pessoa = new Pessoa(nome, salario, idade);
                     pilha.empilhar(pessoa);
+                    System.out.println("Pessoa cadastrada !");
                     break;
                 case 2:
-                    listarPessoas(pilha.tamanhoPilha(), pilha);
+                    listarPessoas(pilha);
+                    System.out.println(pilha);
                     break;
             }
 
