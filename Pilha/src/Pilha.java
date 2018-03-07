@@ -62,6 +62,6 @@ public class Pilha implements IPilha {
     }
 
     public int tamanhoPilha(){
-        return pilha.length-1;
+        return pilha.length;
     }
 }

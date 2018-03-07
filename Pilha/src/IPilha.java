@@ -9,6 +9,8 @@ public interface IPilha {
 
     Boolean estahCheia();
 
+    int tamanhoPilha();
+
     //----------------------------------------------------------------------//
     /*Interface Comparable
     Método / restrição (não utilizar object)
