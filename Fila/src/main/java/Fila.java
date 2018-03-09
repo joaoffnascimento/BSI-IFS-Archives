@@ -34,7 +34,7 @@ public class Fila implements IFila {
         for (int i = inicio; i <= fim; i++) {
             fila[i] = fila[i+1];
         }
-        fim--;
+        fim--; //mover fim
         return saida + "    ---- - -- - Saiu da fila";
     }
 

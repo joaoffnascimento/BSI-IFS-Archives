@@ -8,15 +8,23 @@ public class Main {
         Carro chev = new Carro("prisma", 2004);
         fila.queue(fiat);
         System.out.println(fila);
+        System.out.println();
         fila.queue(volks);
         fila.queue(chev);
         System.out.println(fila);
+        System.out.println();
         System.out.println(fila.deQueue());
+        System.out.println();
         System.out.println(fila);
+        System.out.println();
         System.out.println(fila.deQueue());
+        System.out.println();
         System.out.println(fila);
+        System.out.println();
         System.out.println(fila.deQueue());
+        System.out.println();
         System.out.println(fila);
+        System.out.println();
 
         Carro fiat2 = new Carro("uno2",2016);
         fila.queue(fiat2);
@@ -25,6 +33,7 @@ public class Main {
         Carro chev2 = new Carro("prisma2", 2004);
         fila.queue(chev2);
         System.out.println(fila);
+        System.out.println();
 
 
     }
