@@ -6,7 +6,6 @@ public class Fila implements IFila {
     private int fim;
     private int max;
 
-
     public void inicializarFila(int tamanho) {
         fila = new Object[tamanho];
         setInicio(0);
@@ -14,14 +13,17 @@ public class Fila implements IFila {
         setMax(tamanho - 1);
     }
 
-    public void queue(Object carro) {
+    public void queue(Object carro) throws FilaCheiaException {
+        if (this.isCheia()){
+            throw new FilaCheiaException("Fila cheia !");
+        }
         fim++;
         fila[fim] = carro;
         System.out.println("ok");
 
     }
 
-    public boolean vazia() {
+    public boolean isVazia() {
         if (getFim() >= 0) {
             return true;
         } else {
@@ -29,7 +31,19 @@ public class Fila implements IFila {
         }
     }
 
-    public Object deQueue() {
+    public boolean isCheia() {
+        if(fim == fila.length-1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public Object deQueue() throws FilaVaziaException{
+        if (isVazia()){
+            throw new FilaVaziaException("Fila vazia !");
+        }
         Object saida = fila[inicio];
         for (int i = inicio; i <= fim; i++) {
             fila[i] = fila[i+1];
