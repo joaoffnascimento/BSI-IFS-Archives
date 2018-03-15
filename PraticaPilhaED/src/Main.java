@@ -12,7 +12,7 @@ public class Main {
         do{
             System.out.println("===== MENU =====");
             System.out.println("1- Criar uma nova pessoa.");
-
+            System.out.println("2- Listar pessoas cadastradas.");
             menu = read.nextInt();
 
             switch (menu){
@@ -31,7 +31,7 @@ public class Main {
                     qtdPessoas++;
                     break;
                 case 2:
-
+                    lerPessoa(cadastroPessoas, qtdPessoas);
                     break;
                 case 3:
 
@@ -44,14 +44,12 @@ public class Main {
 
     }
 
-
     //Operacao CRUD
     //CREATE
     public static Object criarPessoa(int idade, String nome, String cpf){
         Pessoa pessoa = new Pessoa(idade, nome, cpf);
         return pessoa;
     }
-
     //READ
     //Desempilhar, Listar, Empilhar novamente.
     public static void lerPessoa(Pilha cadastroPessoa, int qtdPessoas){
