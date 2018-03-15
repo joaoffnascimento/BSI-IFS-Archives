@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pilha implements IPilha {
     Object[] pilha;
     int topoPilha;
@@ -51,5 +53,13 @@ public class Pilha implements IPilha {
     public void inicializarPilha(int tamanho) {
         pilha = new Object[tamanho];
         topoPilha = -1;
+    }
+
+    @Override
+    public String toString() {
+        return "Pilha{" +
+                "pilha=" + Arrays.toString(pilha) +
+                ", topoPilha=" + topoPilha +
+                '}';
     }
 }
