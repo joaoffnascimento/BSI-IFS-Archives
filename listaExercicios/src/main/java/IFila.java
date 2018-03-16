@@ -1,6 +1,6 @@
 public interface IFila {
-    void queue(Object carro);
-    Object deQueue();
+    void queue(Pilha carro);
+    Pilha deQueue();
     boolean isVazia();
     boolean isCheia();
     int tamanho();

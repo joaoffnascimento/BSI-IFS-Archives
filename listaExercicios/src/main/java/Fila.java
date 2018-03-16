@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Fila implements IFila {
-    private Object[] fila;
+    private Pilha[] fila;
     private int inicio;
     private int fim;
     private int max;
@@ -13,13 +13,13 @@ public class Fila implements IFila {
     }
 
     public void inicializarFila(int tamanho) {
-        fila = new Object[tamanho];
+        fila = new Pilha[tamanho];
         setInicio(0);
         setFim(-1);
         setMax(tamanho - 1);
     }
 
-    public void queue(Object o) throws FilaCheiaException {
+    public void queue(Pilha o) throws FilaCheiaException {
         if (this.isCheia()){
             throw new FilaCheiaException("Fila cheia !");
         }
@@ -29,7 +29,7 @@ public class Fila implements IFila {
     }
 
     public boolean isVazia() {
-        if (getFim() >= 0) {
+        if (getInicio() == -1) {
             return true;
         } else {
             return false;
@@ -45,16 +45,23 @@ public class Fila implements IFila {
     }
 
 
-    public Object deQueue() throws FilaVaziaException{
+    public Pilha deQueue() throws FilaVaziaException{
         if (isVazia()){
             throw new FilaVaziaException("Fila vazia !");
         }
-        Object saida = fila[inicio];
+        Pilha saida = fila[inicio];
         for (int i = inicio; i <= fim; i++) {
             fila[i] = fila[i+1];
         }
         fim--; //mover fim
-        return saida + "    ---- - -- - Saiu da fila";
+        return saida;
+    }
+
+    public Object firstPos() throws FilaVaziaException{
+        if(isVazia()){
+            throw new FilaVaziaException("Fila Vazia!");
+        }
+        return fila[inicio];
     }
 
     public int tamanho() {
