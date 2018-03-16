@@ -1,5 +1,8 @@
 import java.util.Scanner;
+
 //padrao factory
+//Enquanto estiver vazia, ou enquanto estiver cheia. (Problemas nos CONTADORES TOPO_PILHA)
+//80% de todos os elementos 10x5
 
 public class Main {
     public static final int TAMANHO_PILHA = 5;
@@ -38,6 +41,7 @@ public class Main {
                         // * * *> Tamanho das pilhas temp e carrinhoTransporte.
                         Pilha temp = new Pilha();
                         temp = Pilha.createPilhaFactory(5);
+                        //Enquanto estiver vazia, ou enquanto estiver cheia.
                         while(!carrinhoTransporte.isEmpty()) {
                             temp.push(carrinhoTransporte.pop());
                         }
@@ -45,8 +49,10 @@ public class Main {
                             pilhaBebidas.push(temp.pop());
                         }
                         galpaoBebidas.queue(pilhaBebidas);
+                        System.out.println("Seu carrinho está cheio e as caixas foram armazenadas no galpão.");
                         carrinhoTransporte = Pilha.createPilhaFactory(TAMANHO_PILHA);
                         temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
+                        pilhaBebidas = Pilha.createPilhaFactory(TAMANHO_PILHA);
                     }
 
                     break;
@@ -61,7 +67,6 @@ public class Main {
                     break;
             }
         } while (menu != 0);
-
     }
 }
 

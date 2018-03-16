@@ -19,13 +19,12 @@ public class Fila implements IFila {
         setMax(tamanho - 1);
     }
 
-    public void queue(Object carro) throws FilaCheiaException {
+    public void queue(Object o) throws FilaCheiaException {
         if (this.isCheia()){
             throw new FilaCheiaException("Fila cheia !");
         }
         fim++;
-        fila[fim] = carro;
-        System.out.println("ok");
+        fila[fim] = o;
 
     }
 
