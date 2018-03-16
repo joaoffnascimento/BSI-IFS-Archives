@@ -35,7 +35,7 @@ public class Main {
                     //Uma nova pilha só pode ser criada quando a altura máxima for alcançada.
                     //v2 ======================================================================== /\ ignorar ====
                     //Alterada a interface IFilha para não armazenar objetos e sim pilhas.
-                    
+
                     if (carrinhoTransporte.size() < TAMANHO_PILHA) {
                         System.out.println("Digite a marca da bebida: ");
                         read.nextLine();
