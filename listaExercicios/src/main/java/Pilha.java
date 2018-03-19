@@ -42,7 +42,7 @@ public class Pilha implements IPilha {
 
 
     public boolean isFull() {
-        if (topoPilha == pilha.length) {
+        if (topoPilha == pilha.length-1) {
             return true;
         } else return false;
     }

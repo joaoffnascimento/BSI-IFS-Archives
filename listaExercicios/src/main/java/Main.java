@@ -4,12 +4,14 @@ import java.util.Scanner;
 //Enquanto estiver vazia, ou enquanto estiver cheia. (Problemas nos CONTADORES TOPO_PILHA)
 //80% de todos os elementos 10x5
 
+
+
 public class Main {
+
     public static final int TAMANHO_PILHA = 5;
     public static final int TAMANHO_FILA = 10;
 
     public static void main(String[] args) {
-
 
         Scanner read = new Scanner(System.in);
         CaixaBebida caixa;
@@ -47,22 +49,26 @@ public class Main {
                         caixa = new CaixaBebida(marca, tipoBebida, volume);
                         carrinhoTransporte.push(caixa);
 
-                    } else if (carrinhoTransporte.size() >= TAMANHO_PILHA) {
-                        // * * *> Tamanho das pilhas temp e carrinhoTransporte.
-                        Pilha temp = new Pilha();
-                        temp = Pilha.createPilhaFactory(5);
-                        //Enquanto estiver vazia, ou enquanto estiver cheia.
-                        while(!carrinhoTransporte.isEmpty()) {
-                            temp.push(carrinhoTransporte.pop());
+                        if (carrinhoTransporte.isFull()) {
+                            // * * *> Tamanho das pilhas temp e carrinhoTransporte.
+                            Pilha temp = new Pilha();
+                            temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
+                            //Enquanto estiver vazia, ou enquanto estiver cheia.
+                            while(!carrinhoTransporte.isEmpty()) {
+                                temp.push(carrinhoTransporte.pop());
+                            }
+                            while(!temp.isEmpty()) {
+                                pilhaBebidas.push(temp.pop());
+                            }
+                            if(galpaoBebidas.getFim() >= 7){
+                                System.out.println("O deposito alcançou 80% de sua capacidade.");
+                            }
+                            galpaoBebidas.queue(pilhaBebidas);
+                            System.out.println("Seu carrinho está cheio e as caixas foram armazenadas no galpão.");
+                            carrinhoTransporte = Pilha.createPilhaFactory(TAMANHO_PILHA);
+                            temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
+                            pilhaBebidas = Pilha.createPilhaFactory(TAMANHO_PILHA);
                         }
-                        while(!temp.isEmpty()) {
-                            pilhaBebidas.push(temp.pop());
-                        }
-                        galpaoBebidas.queue(pilhaBebidas);
-                        System.out.println("Seu carrinho está cheio e as caixas foram armazenadas no galpão.");
-                        carrinhoTransporte = Pilha.createPilhaFactory(TAMANHO_PILHA);
-                        temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
-                        pilhaBebidas = Pilha.createPilhaFactory(TAMANHO_PILHA);
                     }
 
                     break;
@@ -74,9 +80,27 @@ public class Main {
                     //retornar a pilha modificada para o inicio da fila (até a pilha ser totalmente "atendida" e ser removida, para
                     //o "atendimento" fila prosseguir seguindo a ordem normal, e sem burlar os princípios da fila.
 
+                    try{
+                        if(galpaoBebidas.firstPos().isEmpty()){
+                            galpaoBebidas.deQueue();
+                        } else {
+                            CaixaBebida caixaConsumo = (CaixaBebida) galpaoBebidas.firstPos().pop();
+                            System.out.println("Caixa " + caixaConsumo + " retirada para o consumo.");
+                        }
+                    } catch (NullPointerException e){
+                        System.out.println("Você não tem caixas no galpao.");
+                    }
+
+
                     break;
                 case 3:
-                    System.out.println(carrinhoTransporte);
+                   if(galpaoBebidas.isVazia()){
+                       System.out.println("Você não tem caixas no galpao.");
+                   } else {
+                       galpaoBebidas.deQueue();
+                       System.out.println("Lote descartado.");
+                   }
+
                     break;
                 case 4:
                     System.out.println(galpaoBebidas);

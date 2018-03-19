@@ -57,7 +57,7 @@ public class Fila implements IFila {
         return saida;
     }
 
-    public Object firstPos() throws FilaVaziaException{
+    public Pilha firstPos() throws FilaVaziaException{
         if(isVazia()){
             throw new FilaVaziaException("Fila Vazia!");
         }
