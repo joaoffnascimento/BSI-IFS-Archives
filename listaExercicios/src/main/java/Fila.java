@@ -6,7 +6,7 @@ public class Fila implements IFila {
     private int fim;
     private int max;
 
-    public static Fila createFilaFactory(int size){
+    public static Fila createFilaFactory(int size) {
         Fila f = new Fila();
         f.inicializarFila(size);
         return f;
@@ -20,12 +20,11 @@ public class Fila implements IFila {
     }
 
     public void queue(Pilha o) throws FilaCheiaException {
-        if (this.isCheia()){
+        if (this.isCheia()) {
             throw new FilaCheiaException("Fila cheia !");
         }
         fim++;
         fila[fim] = o;
-
     }
 
     public boolean isVazia() {
@@ -37,7 +36,7 @@ public class Fila implements IFila {
     }
 
     public boolean isCheia() {
-        if(fim == fila.length-1){
+        if (fim == fila.length - 1) {
             return true;
         } else {
             return false;
@@ -45,20 +44,20 @@ public class Fila implements IFila {
     }
 
 
-    public Pilha deQueue() throws FilaVaziaException{
-        if (isVazia()){
+    public Pilha deQueue() throws FilaVaziaException {
+        if (isVazia()) {
             throw new FilaVaziaException("Fila vazia !");
         }
         Pilha saida = fila[inicio];
         for (int i = inicio; i <= fim; i++) {
-            fila[i] = fila[i+1];
+            fila[i] = fila[i + 1];
         }
         fim--; //mover fim
         return saida;
     }
 
-    public Pilha firstPos() throws FilaVaziaException{
-        if(isVazia()){
+    public Pilha firstPos() throws FilaVaziaException {
+        if (isVazia()) {
             throw new FilaVaziaException("Fila Vazia!");
         }
         return fila[inicio];
@@ -90,6 +89,28 @@ public class Fila implements IFila {
 
     public void setMax(int max) {
         this.max = max;
+    }
+
+    class FilaVaziaException extends RuntimeException {
+
+        public FilaVaziaException(String msg) {
+            super(msg);
+        }
+
+        public FilaVaziaException(String msg, Throwable cause) {
+            super(msg, cause);
+        }
+    }
+
+    class FilaCheiaException extends RuntimeException {
+        // constrói um objeto FilaCheiaException com a mensagem passada por parâmetro
+        public FilaCheiaException(String msg) {
+            super(msg);
+        }
+        // constrói um objeto FilaVaziaException com mensagem e a causa dessa exceção, utilizado para encadear exceptions
+        public FilaCheiaException(String msg, Throwable cause) {
+            super(msg, cause);
+        }
     }
 
     @Override

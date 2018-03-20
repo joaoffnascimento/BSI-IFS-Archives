@@ -1,12 +1,10 @@
 public class CaixaBebida {
     private String marca;
     private String tipo;
-    private float volume;
 
-    public CaixaBebida(String marca, String tipo, float volume) {
+    public CaixaBebida(String marca, String tipo) {
         this.marca = marca;
         this.tipo = tipo;
-        this.volume = volume;
     }
 
     public String getMarca() {
@@ -25,20 +23,11 @@ public class CaixaBebida {
         this.tipo = tipo;
     }
 
-    public float getVolume() {
-        return volume;
-    }
-
-    public void setVolume(float volume) {
-        this.volume = volume;
-    }
-
     @Override
     public String toString() {
         return "CaixaBebida{" +
                 "marca='" + marca + '\'' +
                 ", tipo='" + tipo + '\'' +
-                ", volume=" + volume +
                 '}';
     }
 }
