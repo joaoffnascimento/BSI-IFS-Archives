@@ -6,11 +6,9 @@ public class Main {
     public static final int TAMANHO_FILA = 10;
 
     public static void main(String[] args) {
-
         Scanner read = new Scanner(System.in);
         CaixaBebida caixa;
         Fila galpaoBebidas = Fila.createFilaFactory(TAMANHO_FILA);
-        Pilha pilhaBebidas = Pilha.createPilhaFactory(TAMANHO_PILHA);
         Pilha carrinhoTransporte = Pilha.createPilhaFactory(TAMANHO_PILHA);
 
         int menu = -1;
@@ -40,54 +38,45 @@ public class Main {
 
                         if (carrinhoTransporte.isFull()) {
 
-                            Pilha temp = new Pilha();
-                            temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
-
-                            while (!carrinhoTransporte.isEmpty()) {
-                                temp.push(carrinhoTransporte.pop());
-                            }
-                            while (!temp.isEmpty()) {
-                                pilhaBebidas.push(temp.pop());
-                            }
-                            if (galpaoBebidas.getFim() == 7) {
-                                System.out.println("O deposito alcançou 80% de sua capacidade.");
-                            }
                             try {
-                                galpaoBebidas.queue(pilhaBebidas);
+                                galpaoBebidas.queue(carrinhoTransporte);
                                 System.out.println("Seu carrinho está cheio e as caixas foram armazenadas no galpão.");
                             } catch (Fila.FilaCheiaException e) {
                                 System.out.println("Seu galpao esta cheio, esta pilha de bebidas nao pode ser armazenada.");
                             }
 
                             carrinhoTransporte = Pilha.createPilhaFactory(TAMANHO_PILHA);
-                            temp = Pilha.createPilhaFactory(TAMANHO_PILHA);
-                            pilhaBebidas = Pilha.createPilhaFactory(TAMANHO_PILHA);
+
+                            if (galpaoBebidas.getFim() == 7) {
+                                System.out.println("O deposito alcançou 80% de sua capacidade.");
+                            }
                         }
                     }
-
                     break;
                 case 2:
-
                     try {
                         if (galpaoBebidas.firstPos().isEmpty()) {
                             galpaoBebidas.deQueue();
                         } else {
-                            CaixaBebida caixaConsumo = (CaixaBebida) galpaoBebidas.firstPos().pop();
-                            System.out.println("Caixa " + caixaConsumo + " retirada para o consumo.");
+                            System.out.println(galpaoBebidas.firstPos().pop());
                         }
-                    } catch (NullPointerException e) {
-                        System.out.println("Você não tem caixas no galpao.");
+                    } catch (Fila.FilaVaziaException e) {
+                        System.out.println(e.getMessage());
                     }
 
                     break;
                 case 3:
-
-                    if (galpaoBebidas.isVazia()) {
-                        System.out.println("Você não tem caixas no galpao.");
-                    } else {
-                        galpaoBebidas.deQueue();
-                        System.out.println("Lote descartado.");
+                    try {
+                        if (galpaoBebidas.firstPos() == null) {
+                            System.out.println("Voce nao tem caixas no galpao.");
+                        } else {
+                            galpaoBebidas.deQueue();
+                            System.out.println("Lote descartado.");
+                        }
+                    } catch (Fila.FilaVaziaException e) {
+                        System.out.println(e.getMessage());
                     }
+
                     break;
                 case 4:
                     System.out.println(galpaoBebidas);

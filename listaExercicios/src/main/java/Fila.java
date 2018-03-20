@@ -46,7 +46,7 @@ public class Fila implements IFila {
 
     public Pilha deQueue() throws FilaVaziaException {
         if (isVazia()) {
-            throw new FilaVaziaException("Fila vazia !");
+            throw new FilaVaziaException("Você não tem caixas no galpao.");
         }
         Pilha saida = fila[inicio];
         for (int i = inicio; i <= fim; i++) {
@@ -58,7 +58,7 @@ public class Fila implements IFila {
 
     public Pilha firstPos() throws FilaVaziaException {
         if (isVazia()) {
-            throw new FilaVaziaException("Fila Vazia!");
+            throw new FilaVaziaException("Você não tem caixas no galpao.");
         }
         return fila[inicio];
     }

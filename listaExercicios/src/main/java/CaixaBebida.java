@@ -25,9 +25,8 @@ public class CaixaBebida {
 
     @Override
     public String toString() {
-        return "CaixaBebida{" +
-                "marca='" + marca + '\'' +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        return "Caixa de bebida sendo comsumida: [" +
+                "marca: " + marca +
+                ", tipo: " + tipo + "]";
     }
 }
