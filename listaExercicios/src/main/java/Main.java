@@ -18,14 +18,12 @@ public class Main {
             System.out.println("1- Adicionar caixa de bebidas.");
             System.out.println("2- Consumir uma nova caixa de bebidas.");
             System.out.println("3- Descartar um lote inteiro de bebidas.");
-            System.out.println("4- Situacao do galpao.");
-            System.out.println("5- Relatorio.");
+            System.out.println("4- Gerar relatório.");
             System.out.println("0- Sair.");
             menu = read.nextInt();
 
             switch (menu) {
                 case 1:
-
                     if (carrinhoTransporte.size() < TAMANHO_PILHA) {
                         System.out.println("Digite a marca da bebida: ");
                         read.nextLine();
@@ -57,13 +55,13 @@ public class Main {
                     try {
                         if (galpaoBebidas.firstPos().isEmpty()) {
                             galpaoBebidas.deQueue();
+                            System.out.println("Voce consumiu todo o lote.");
                         } else {
                             System.out.println(galpaoBebidas.firstPos().pop());
                         }
-                    } catch (Fila.FilaVaziaException e) {
-                        System.out.println(e.getMessage());
+                    } catch (NullPointerException e) {
+                        System.out.println("Voce nao tem caixas no galpao.");
                     }
-
                     break;
                 case 3:
                     try {
@@ -76,13 +74,15 @@ public class Main {
                     } catch (Fila.FilaVaziaException e) {
                         System.out.println(e.getMessage());
                     }
-
                     break;
                 case 4:
-                    System.out.println(galpaoBebidas);
-                    break;
-                case 5:
-                    System.out.println(carrinhoTransporte);
+                    System.out.println("Voce possui " + (galpaoBebidas.getFim() + 1) + " pilhas de caixas de bebidas armazenadas neste galpao.");
+                    if (galpaoBebidas.firstPos().isFull()){
+                        System.out.println("Nenhuma caixa de bebidas foi retirada da pilha atual para o consumo ate o momento.");
+                    } else {
+                        System.out.println("Voce esta consumindo alguma(s) caixas do seu estoque");
+                    }
+                    System.out.println("Seu galpao de bebidas esta operando com " + (((galpaoBebidas.getFim() + 1) * 100))/TAMANHO_FILA + " % da capacidade");
                     break;
             }
         } while (menu != 0);
