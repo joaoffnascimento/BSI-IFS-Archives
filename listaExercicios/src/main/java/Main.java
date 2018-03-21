@@ -77,12 +77,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Voce possui " + (galpaoBebidas.getFim() + 1) + " pilhas de caixas de bebidas armazenadas neste galpao.");
-                    if (galpaoBebidas.firstPos().isFull()){
-                        System.out.println("Nenhuma caixa de bebidas foi retirada da pilha atual para o consumo ate o momento.");
-                    } else {
-                        System.out.println("Voce esta consumindo alguma(s) caixas do seu estoque");
-                    }
-                    System.out.println("Seu galpao de bebidas esta operando com " + (((galpaoBebidas.getFim() + 1) * 100))/TAMANHO_FILA + " % da capacidade");
+                    System.out.println("Seu galpao de bebidas esta operando com " + (((galpaoBebidas.getFim() + 1) * 100)) / TAMANHO_FILA + " % da capacidade");
                     break;
             }
         } while (menu != 0);
