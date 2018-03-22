@@ -9,6 +9,10 @@ public class Main {
     public static boolean iguais(IPilha pilhaA, IPilha pilhaB) {
         int countAux = 0;
 
+        if (pilhaA.size() != pilhaB.size()) {
+            return false;
+        }
+
         do {
             if (pilhaA.pop().equals(pilhaB.pop())) {
                 countAux++;
@@ -62,7 +66,7 @@ public class Main {
                     System.out.println(pilhaB);
                     break;
                 case 3:
-                    if(iguais(pilhaA,pilhaB)){
+                    if (iguais(pilhaA, pilhaB)) {
                         System.out.println("Os valores da pilha são iguais");
                     } else {
                         System.out.println("Os valores da pilha não são iguais");
