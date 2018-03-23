@@ -21,6 +21,7 @@ abstract class QuestaoProva {
 
     int capacidadeMaxPorTipo = 0;
 
+    //Não entendi a funcionalidade deste método, inicializei as filas com tamanhos estáticos.
     public QuestaoProva(int capacidadeMaxPorTipo) {
         this.capacidadeMaxPorTipo = capacidadeMaxPorTipo;
 
@@ -54,6 +55,11 @@ public abstract class Main extends QuestaoProva {
     public static Fila f4 = Fila.createFilaFactory(TAMANHO_FILA);
 
     public static void main(String[] args) {
+        Tipo maiorqzeropar = Tipo.MaiorQZeroPar;
+        Tipo maiorqzeroimpar = Tipo.MaiorQZeroImpar;
+        Tipo menorigualzeropar = Tipo.MenorIgualZeroPar;
+        Tipo menorigualzeroimpar = Tipo.MenorIgualZeroImpar;
+
         //objeto instacia da classe main para chamar os métodos implementados da classe abstrata.
 
         Main main = new Main() {
@@ -78,12 +84,53 @@ public abstract class Main extends QuestaoProva {
 
             @Override
             public int obterProximo(Tipo tipo) {
-                return 1;
+                int retorno = 0;
+
+                switch (tipo) {
+                    case MaiorQZeroPar:
+
+                        try {
+                            retorno = f1.deQueue();
+                        } catch (Fila.FilaVaziaException e) {
+                            System.out.println(e.getMessage());
+                        }
+
+                        break;
+                    case MaiorQZeroImpar:
+
+                        try {
+                            retorno = f2.deQueue();
+                        } catch (Fila.FilaVaziaException e) {
+                            System.out.println(e.getMessage());
+                        }
+                        break;
+                    case MenorIgualZeroPar:
+
+                        try {
+                            retorno = f3.deQueue();
+                        } catch (Fila.FilaVaziaException e) {
+                            System.out.println(e.getMessage());
+                        }
+                        break;
+                    case MenorIgualZeroImpar:
+
+                        try {
+                            retorno = f4.deQueue();
+                        } catch (Fila.FilaVaziaException e) {
+                            System.out.println(e.getMessage());
+                        }
+                        break;
+                }
+                return retorno;
             }
 
             @Override
             public void excluirTodos(Tipo tipo) {
-
+                f1 = Fila.createFilaFactory(TAMANHO_FILA);
+                f2 = Fila.createFilaFactory(TAMANHO_FILA);
+                f3 = Fila.createFilaFactory(TAMANHO_FILA);
+                f4 = Fila.createFilaFactory(TAMANHO_FILA);
+                System.out.println("As filas foram resetadas com sucesso !");
             }
         };
 
@@ -93,12 +140,16 @@ public abstract class Main extends QuestaoProva {
         do {
             System.out.println("==================== MENU ====================");
             System.out.println("1- Preencher estrutura de dados.");
+            System.out.println("2- retornar um valor maior que zero par.");
+            System.out.println("3- retornar um valor maior que zero impar.");
+            System.out.println("4- retornar um valor menor ou igual a  zero par.");
+            System.out.println("5- retornar um valor menor ou igual a zero impar.");
+            System.out.println("6- excluir todos.");
             System.out.println("0- Sair.");
             menu = read.nextInt();
 
             switch (menu) {
                 case 1:
-
                     for (int i = 0; i < 50; i++) {
                         main.adicionar(gerarNumeroAleatorio());
                     }
@@ -108,12 +159,18 @@ public abstract class Main extends QuestaoProva {
                     System.out.println(f4);
                     break;
                 case 2:
-                    System.out.println(f1.tamanho());
+                    System.out.println(main.obterProximo(maiorqzeropar));
                     break;
                 case 3:
-
+                    System.out.println(main.obterProximo(maiorqzeroimpar));
                     break;
                 case 4:
+                    System.out.println(main.obterProximo(menorigualzeropar));
+                    break;
+                case 5:
+                    System.out.println(main.obterProximo(menorigualzeroimpar));
+                    break;
+                case 6:
 
                     break;
             }
