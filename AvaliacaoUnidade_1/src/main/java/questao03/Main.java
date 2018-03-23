@@ -32,7 +32,6 @@ abstract class QuestaoProva {
     }
 }
 
-
 public abstract class Main extends QuestaoProva {
 
     public static final int TAMANHO_FILA = 50;
@@ -66,19 +65,39 @@ public abstract class Main extends QuestaoProva {
             @Override
             public void adicionar(int valor) {
                 if ((valor > 0) && (valor % 2 == 0)) {
-                    f1.queue(valor);
+                    try {
+                        f1.queue(valor);
+                    } catch (Fila.FilaCheiaException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
 
                 if ((valor > 0) && (valor % 2 != 0)) {
-                    f2.queue(valor);
+                    try {
+                        f2.queue(valor);
+                    } catch (Fila.FilaCheiaException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
 
                 if ((valor <= 0) && (valor % 2 == 0)) {
-                    f3.queue(valor);
+                    try {
+                        f3.queue(valor);
+                    } catch (Fila.FilaCheiaException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
 
                 if ((valor <= 0) && (valor % 2 != 0)) {
-                    f4.queue(valor);
+                    try {
+                        f4.queue(valor);
+                    } catch (Fila.FilaCheiaException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
             }
 
@@ -126,11 +145,26 @@ public abstract class Main extends QuestaoProva {
 
             @Override
             public void excluirTodos(Tipo tipo) {
-                f1 = Fila.createFilaFactory(TAMANHO_FILA);
-                f2 = Fila.createFilaFactory(TAMANHO_FILA);
-                f3 = Fila.createFilaFactory(TAMANHO_FILA);
-                f4 = Fila.createFilaFactory(TAMANHO_FILA);
-                System.out.println("As filas foram resetadas com sucesso !");
+                switch (tipo) {
+                    case MaiorQZeroPar:
+                        f1 = Fila.createFilaFactory(TAMANHO_FILA);
+                        System.out.println("Os valores maior que zero par foram removidos !");
+                        break;
+                    case MaiorQZeroImpar:
+                        f2 = Fila.createFilaFactory(TAMANHO_FILA);
+                        System.out.println("Os valores maior que zero impar foram removidos !");
+                        break;
+                    case MenorIgualZeroPar:
+                        f3 = Fila.createFilaFactory(TAMANHO_FILA);
+                        System.out.println("Os valores menor ou igual a  zero par foram removidos !");
+                        break;
+                    case MenorIgualZeroImpar:
+                        f4 = Fila.createFilaFactory(TAMANHO_FILA);
+                        System.out.println("Os valores menor ou igual a zero impar foram removidos !");
+                        break;
+                }
+
+
             }
         };
 
@@ -144,7 +178,10 @@ public abstract class Main extends QuestaoProva {
             System.out.println("3- retornar um valor maior que zero impar.");
             System.out.println("4- retornar um valor menor ou igual a  zero par.");
             System.out.println("5- retornar um valor menor ou igual a zero impar.");
-            System.out.println("6- excluir todos.");
+            System.out.println("6- excluir todo valor maior que zero par.");
+            System.out.println("7- excluir todo valor maior que zero impar.");
+            System.out.println("8- excluir todo valor menor ou igual a  zero par.");
+            System.out.println("9- excluir todo valor menor ou igual a zero impar.");
             System.out.println("0- Sair.");
             menu = read.nextInt();
 
@@ -176,5 +213,4 @@ public abstract class Main extends QuestaoProva {
             }
         } while (menu != 0);
     }
-
 }
