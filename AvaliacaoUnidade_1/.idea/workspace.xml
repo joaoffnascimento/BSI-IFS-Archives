@@ -39,10 +39,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/questao03/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="854">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2014#2015#0" expanded="true" />
+                <element signature="e#2054#2055#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,12 +65,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/questao01/Pilha.java" />
         <option value="$PROJECT_DIR$/src/main/java/questao01/IPilha.java" />
-        <option value="$PROJECT_DIR$/src/main/java/questao02/respostaQuestaoComplexidade.txt" />
         <option value="$PROJECT_DIR$/src/main/java/questao03/IFila.java" />
         <option value="$PROJECT_DIR$/src/main/java/questao03/Fila.java" />
         <option value="$PROJECT_DIR$/src/main/java/questao01/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/questao03/QuestaoProva.java" />
         <option value="$PROJECT_DIR$/src/main/java/questao03/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/questao02/respostaQuestaoComplexidade.txt" />
       </list>
     </option>
   </component>
@@ -308,14 +310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/questao02/respostaQuestaoComplexidade.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/questao01/Pilha.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -359,12 +353,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/questao02/respostaQuestaoComplexidade.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/questao03/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="854">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2054#2055#0" expanded="true" />
           </folding>
         </state>
       </provider>
