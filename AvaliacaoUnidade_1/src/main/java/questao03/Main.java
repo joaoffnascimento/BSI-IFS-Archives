@@ -163,8 +163,6 @@ public abstract class Main extends QuestaoProva {
                         System.out.println("Os valores menor ou igual a zero impar foram removidos !");
                         break;
                 }
-
-
             }
         };
 
@@ -208,8 +206,18 @@ public abstract class Main extends QuestaoProva {
                     System.out.println(main.obterProximo(menorigualzeroimpar));
                     break;
                 case 6:
-
+                    main.excluirTodos(maiorqzeropar);
                     break;
+                case 7:
+                    main.excluirTodos(maiorqzeroimpar);
+                    break;
+                case 8:
+                    main.excluirTodos(menorigualzeropar);
+                    break;
+                case 9:
+                    main.excluirTodos(menorigualzeroimpar);
+                    break;
+
             }
         } while (menu != 0);
     }
