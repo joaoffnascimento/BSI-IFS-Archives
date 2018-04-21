@@ -1,9 +1,20 @@
 public class Main {
-    public static void main(String[] args) {
-        ListaNO listaNaoOrdenada = new ListaNO();
+    public static void main(String[] args) throws ListaException {
+        Pessoa p1 = new Pessoa("lucas",13);
+        Pessoa p2 = new Pessoa("jose", 14);
 
-        listaNaoOrdenada.inicializar(10);
-        Object carro = new Object();
-        listaNaoOrdenada.adicionar(Comparable carro);
+        System.out.println(p1.compareTo(p2));
+        System.out.println(p2.compareTo(p1));
+
+        ListaSequencialNaoOrdenada lista = new ListaSequencialNaoOrdenada();
+        lista.inicializar(10);
+        System.out.println(lista);
+        lista.adicionar(p1);
+        lista.adicionar(p2);
+        lista.expandirLista(10);
+        System.out.println(lista);
+        lista.expandirLista(10);
+        System.out.println(lista);
+
     }
 }
