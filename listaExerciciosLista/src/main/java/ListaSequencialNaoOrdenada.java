@@ -33,17 +33,37 @@ public class ListaSequencialNaoOrdenada implements ILista {
         } else if (qtdElementosArmazenados >= tamanhoLista) {
             throw new ListaException("Lista cheia !");
         }
-
-
     }
 
     public void remover(Object chave) throws ListaException {
-
+        //??? remover um objeto chave ???
+        //?remover de uma posicao?
+        for (int i = 0; i < qtdElementosArmazenados; i++) {
+            if(lista[i].equals(chave)){
+                int pos = i;
+                for (int j = pos; j < qtdElementosArmazenados-1; j++) {
+                    lista[j] = lista[j+1];
+                }
+                qtdElementosArmazenados--;
+            }
+        }
     }
 
-    public boolean contem(Object chave) {
+    //Como a chave é um objeto, devo utilizar o equals ?!
+    //Duvidas nessa parte \/
+    public boolean contem(Object chave) throws ListaException{
+        if(listaInicializada){
+            for(int i = 0; i < qtdElementosArmazenados; i++){
+                if(lista[i].equals(chave)){
+                    return true;
+                }
+            }
+        } else {
+            throw new ListaException("Lista nao inicializada !");
+        }
         return false;
     }
+
 
     public void expandirLista(float percentual) throws IndexOutOfBoundsException {
         //Criar um novo vetor com o novo tamanho, e passar os elementos do anterior para esse.

@@ -26,7 +26,7 @@ public interface ILista {
      * @param chave
      * @return
      */
-    boolean contem(Object chave);
+    boolean contem(Object chave) throws ListaException;
 
     /**
      * Aumenta a quantidade de intes disponíveis na lista em X porcento.

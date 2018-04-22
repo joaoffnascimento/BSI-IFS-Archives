@@ -16,5 +16,8 @@ public class Main {
         lista.expandirLista(10);
         System.out.println(lista);
 
+        System.out.println(lista.contem(p1));
+        lista.remover(p1);
+        System.out.println(lista);
     }
 }
