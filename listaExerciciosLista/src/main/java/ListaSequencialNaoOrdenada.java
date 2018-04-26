@@ -1,7 +1,18 @@
 import java.util.Arrays;
 
 public class ListaSequencialNaoOrdenada implements ILista {
-
+    //no cabeça / no cauda / Circular
+    /**
+     * Lista sequencial (array)
+     * Lista encadeada (simples e duplamente) Ordenada e não ordenada
+     * Inverta uma lista simplesmente encadeada
+     * converta uma fila em uma pilha e vice versa
+     * Descritor
+     * lista simplesmente encadeada ordenada.
+     * Fila
+     * Pilha
+     * Qualquer coisa (Algoritmos de ordenação).
+     */
     public Object[] lista;
     public int tamanhoLista;
     public int qtdElementosArmazenados;

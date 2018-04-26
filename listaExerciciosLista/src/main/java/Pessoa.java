@@ -38,7 +38,7 @@ public class Pessoa implements Comparable {
             return 0;
         }
     }
-
+    //Padrao de projeto executor / comand
     @Override
     public boolean equals(Object o) {
         if (o instanceof Pessoa) {
