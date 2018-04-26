@@ -40,6 +40,18 @@ public class Pessoa implements Comparable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o instanceof Pessoa) {
+            return ((Pessoa) o).idade == this.idade;
+        } else if (o != null) {
+            //Parse no valor inteiro para Integer
+            return new Integer(this.idade).equals(o);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
