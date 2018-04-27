@@ -12,6 +12,7 @@ public class ListaSequencialNaoOrdenada implements ILista {
      * Fila
      * Pilha
      * Qualquer coisa (Algoritmos de ordenação).
+     * add inicio / remover meio
      */
     public Object[] lista;
     public int tamanhoLista;
@@ -50,10 +51,10 @@ public class ListaSequencialNaoOrdenada implements ILista {
         //??? remover um objeto chave ???
         //?remover de uma posicao?
         for (int i = 0; i < qtdElementosArmazenados; i++) {
-            if(lista[i].equals(chave)){
+            if (lista[i].equals(chave)) {
                 int pos = i;
-                for (int j = pos; j < qtdElementosArmazenados-1; j++) {
-                    lista[j] = lista[j+1];
+                for (int j = pos; j < qtdElementosArmazenados - 1; j++) {
+                    lista[j] = lista[j + 1];
                 }
                 qtdElementosArmazenados--;
             }
@@ -62,10 +63,10 @@ public class ListaSequencialNaoOrdenada implements ILista {
 
     //Como a chave é um objeto, devo utilizar o equals ?!
     //Duvidas nessa parte \/
-    public boolean contem(Object chave) throws ListaException{
-        if(listaInicializada){
-            for(int i = 0; i < qtdElementosArmazenados; i++){
-                if(lista[i].equals(chave)){
+    public boolean contem(Object chave) throws ListaException {
+        if (listaInicializada) {
+            for (int i = 0; i < qtdElementosArmazenados; i++) {
+                if (lista[i].equals(chave)) {
                     return true;
                 }
             }
@@ -88,6 +89,29 @@ public class ListaSequencialNaoOrdenada implements ILista {
         }
         lista = listaAuxiliar;
         /*}*/
+    }
+
+    public Comparable obter(Object chave) {
+        for (int i = 0; i < qtdElementosArmazenados; i++) {
+            if (lista[i].equals(chave)) {
+                return (Comparable) lista[i];
+            }
+        }
+        return null;
+    }
+
+    public Comparable obter(int posicao) throws ListaException {
+        if (posicao >= qtdElementosArmazenados || posicao <= qtdElementosArmazenados) {
+            throw new ListaException("O valor informado  não é valido !");
+        }
+        Comparable com;
+        for (int i = 0; i < qtdElementosArmazenados; i++) {
+            if (i == posicao-1) {
+                return (Comparable) lista[i];
+            }
+        }
+        //complemento
+        return null;
     }
 
     @Override

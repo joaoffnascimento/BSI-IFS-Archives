@@ -33,4 +33,20 @@ public interface ILista {
      * @param percentual percentual a ser aumentado.
      */
     void expandirLista(float percentual);
+
+    /**
+     * Recupera o item da lista. Caso não encontre, retorna null.
+     * @param chave a chave de busca do item
+     * @return caso não encontre retorna null.
+     */
+    Comparable obter(Object chave);
+
+    /**
+     * Recupera o item da lista com base em sua posição.
+     * @param posicao a chave de busca do item
+     * @return o item da posicao informada
+     * @throws ListaException caso a posição seja inválida.
+     */
+    Comparable obter(int posicao) throws ListaException;
+
 }
