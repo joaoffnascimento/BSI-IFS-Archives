@@ -100,7 +100,7 @@ public class ListaSequencialNaoOrdenada implements ILista {
         return null;
     }
 
-    public Comparable obter(int posicao) throws ListaException {
+    public Comparable obterDaPosicao(int posicao) throws ListaException {
         if (posicao > qtdElementosArmazenados || posicao < qtdElementosArmazenados) {
             throw new ListaException("O valor informado  não é valido !");
         }

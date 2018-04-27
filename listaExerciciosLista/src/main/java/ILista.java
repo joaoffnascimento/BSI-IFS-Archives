@@ -47,6 +47,6 @@ public interface ILista {
      * @return o item da posicao informada
      * @throws ListaException caso a posição seja inválida.
      */
-    Comparable obter(int posicao) throws ListaException;
+    Comparable obterDaPosicao(int posicao) throws ListaException;
 
 }
