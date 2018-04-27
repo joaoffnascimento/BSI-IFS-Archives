@@ -49,4 +49,10 @@ public interface ILista {
      */
     Comparable obterDaPosicao(int posicao) throws ListaException;
 
+    /**
+     * Método para verificar se a lista está cheia.
+     * @return
+     */
+    boolean estahCheia();
+
 }

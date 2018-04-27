@@ -76,7 +76,7 @@ public class ListaSequencialNaoOrdenada implements ILista {
         return false;
     }
 
-
+    //O(n)
     public void expandirLista(float percentual) throws IndexOutOfBoundsException {
         //Criar um novo vetor com o novo tamanho, e passar os elementos do anterior para esse.
         //Casos de adidionar um elemento em um indice especificado.
@@ -122,6 +122,15 @@ public class ListaSequencialNaoOrdenada implements ILista {
             return (Comparable) this.lista[posicao];
         } else {
             throw new ListaException("A posição informada não é válida ou está nula!");
+        }
+    }
+
+    //Método O(1)
+    public boolean estahCheia(){
+        if(qtdElementosArmazenados >= tamanhoLista){
+            return true;
+        } else {
+            return false;
         }
     }
 

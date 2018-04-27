@@ -83,8 +83,12 @@ public class Main {
 
         System.out.println("Retorno da posição 1: " + listaSEQNO.obterDaPosicao(1));
         System.out.println("Retorno da posição 3: " + listaSEQNO.obterDaPosicao(3));
-        //System.out.println("Retorno da posição 10: " + listaSEQNO.obterDaPosicao(10));
+        try {
+            System.out.println("Retorno da posição 10: " + listaSEQNO.obterDaPosicao(10));
+        } catch (ListaException e) {
+            System.out.println(e.getMessage());
+        }
 
-
+        listaSEQNO.estahCheia();
     }
 }
