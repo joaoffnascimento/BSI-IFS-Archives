@@ -27,6 +27,7 @@ public class Main {
         Pessoa p1 = new Pessoa("lucas",13);
         Pessoa p2 = new Pessoa("jose", 14);
 
+
         //System.out.println(p1.compareTo(p2));
         //System.out.println(p2.compareTo(p1));
 
@@ -37,7 +38,9 @@ public class Main {
         lista.adicionar(p2);
         System.out.println("===============================");
         //System.out.println(lista.contem(null));
-        System.out.println(lista.obter(14 ));
+        Pessoa p3 = new Pessoa();
+        p3.setIdade(13);
+        System.out.println(lista.obter(13));
         lista.expandirLista(10);
         //System.out.println(lista);
         lista.expandirLista(10);

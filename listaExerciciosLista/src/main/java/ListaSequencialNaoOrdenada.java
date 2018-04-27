@@ -101,16 +101,14 @@ public class ListaSequencialNaoOrdenada implements ILista {
     }
 
     public Comparable obter(int posicao) throws ListaException {
-        if (posicao >= qtdElementosArmazenados || posicao <= qtdElementosArmazenados) {
+        if (posicao > qtdElementosArmazenados || posicao < qtdElementosArmazenados) {
             throw new ListaException("O valor informado  não é valido !");
         }
-        Comparable com;
         for (int i = 0; i < qtdElementosArmazenados; i++) {
-            if (i == posicao-1) {
+            if (i == posicao - 1) {
                 return (Comparable) lista[i];
             }
         }
-        //complemento
         return null;
     }
 
