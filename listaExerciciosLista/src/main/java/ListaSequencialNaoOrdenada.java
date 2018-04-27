@@ -100,6 +100,8 @@ public class ListaSequencialNaoOrdenada implements ILista {
         return null;
     }
 
+    //Método O(n)
+    /*
     public Comparable obterDaPosicao(int posicao) throws ListaException {
         if (posicao > qtdElementosArmazenados || posicao < qtdElementosArmazenados) {
             throw new ListaException("O valor informado  não é valido !");
@@ -110,6 +112,17 @@ public class ListaSequencialNaoOrdenada implements ILista {
             }
         }
         return null;
+    }
+    */
+
+    //Método O(1)
+    public Comparable obterDaPosicao(int posicao) throws ListaException {
+        posicao = posicao - 1;
+        if (posicao >= 0 && posicao <= qtdElementosArmazenados && this.lista[posicao] != null) {
+            return (Comparable) this.lista[posicao];
+        } else {
+            throw new ListaException("A posição informada não é válida ou está nula!");
+        }
     }
 
     @Override

@@ -38,14 +38,15 @@ public class Pessoa implements Comparable {
             return 0;
         }
     }
+
     //Padrao de projeto executor / comand
     @Override
     public boolean equals(Object o) {
         if (o instanceof Pessoa) {
-            return ((Pessoa) o).idade == this.idade;
+            return ((Pessoa) o).idade == this.idade || ((Pessoa) o).nome == getNome();
         } else if (o != null) {
             //Parse no valor inteiro para Integer
-            return new Integer(this.idade).equals(o);
+            return new Integer(this.idade).equals(o) || new String(this.nome).equals(o);
         } else {
             return false;
         }

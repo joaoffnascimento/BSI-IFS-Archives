@@ -1,4 +1,9 @@
 public class Main {
+
+    public static ILista criarListaSEQNO() {
+        return new ListaSequencialNaoOrdenada();
+    }
+
     public static void main(String[] args) throws ListaException {
         //Adaptar para um programa de testes
         //Fazer os métodos correspondentes a cada uma das funcionalidades
@@ -24,36 +29,62 @@ public class Main {
          * lista.remove(2);
          * }
          */
-        Pessoa p1 = new Pessoa("lucas",13);
-        Pessoa p2 = new Pessoa("jose", 14);
-
-
-        //System.out.println(p1.compareTo(p2));
-        //System.out.println(p2.compareTo(p1));
-
-        ListaSequencialNaoOrdenada lista = new ListaSequencialNaoOrdenada();
-        lista.inicializar(10);
-        //System.out.println(lista);
-        lista.adicionar(p1);
-        lista.adicionar(p2);
-        System.out.println("===============================");
-        //System.out.println(lista.contem(null));
-        Pessoa p3 = new Pessoa();
-        p3.setIdade(13);
-        System.out.println(lista.obter(13));
-        lista.expandirLista(10);
-        //System.out.println(lista);
-        lista.expandirLista(10);
-        //System.out.println(lista);
-
-        //System.out.println(lista.contem(p1));
-        lista.remover(p1);
-       // System.out.println(lista);
-
         /**
          * inst of comparable
          * ((comparable)o).compareTo(this.info); ou o inverso
          */
+
+        ILista listaSEQNO = criarListaSEQNO();
+        listaSEQNO.inicializar(5);
+
+        Pessoa p1 = new Pessoa("Lucas", 10);
+        Pessoa p2 = new Pessoa("Jose", 11);
+        Pessoa p3 = new Pessoa("Carlos", 12);
+
+        listaSEQNO.adicionar(p1);
+        listaSEQNO.adicionar(p2);
+        listaSEQNO.adicionar(p3);
+
+        System.out.println(" ");
+        //TESTE DO METODO CONTEM, para verificar se existe algum objeto ou chave na lista de acordo com a entrada.
+        System.out.println("Teste do método contém /");
+
+        //Tem que ser True
+        System.out.println("Existe alguem com idade 10? " + listaSEQNO.contem(10));
+
+        //Tem que ser false
+        System.out.println("Existe alguem com idade 9? " + listaSEQNO.contem(9));
+
+        //Tem que ser True
+        System.out.println("Existe algum Lucas ? " + listaSEQNO.contem("Lucas"));
+
+        //Tem que ser false
+        System.out.println("Existe algum malacoi? " + listaSEQNO.contem("malacoi"));
+
+        System.out.println(" ");
+        //Teste do METODO OBTER
+        System.out.println("Teste do método obter /");
+
+        //Tem que ser True
+        System.out.println("Quem tem idade 10? " + listaSEQNO.obter(10));
+
+        //Tem que ser false
+        System.out.println("Quem tem idade 9? " + listaSEQNO.obter(9));
+
+        //Tem que ser True
+        System.out.println("Existe Jose ? " + listaSEQNO.obter("Jose"));
+
+        //Tem que ser false
+        System.out.println("Existe algum malacoi? " + listaSEQNO.obter("malacoi"));
+
+        System.out.println(" ");
+        //TESTE do METODO OBTERDAPOSICAO
+        System.out.println("Teste do método obter da posição /");
+
+        System.out.println("Retorno da posição 1: " + listaSEQNO.obterDaPosicao(1));
+        System.out.println("Retorno da posição 3: " + listaSEQNO.obterDaPosicao(3));
+        //System.out.println("Retorno da posição 10: " + listaSEQNO.obterDaPosicao(10));
+
 
     }
 }
