@@ -1,4 +1,0 @@
-Complexidade dos métodos da questão Anterior:
-
-Métodos da classe Pilha = O(1).
-Método para comparar se são iguais os objetos da pilhaA e pilhaB = O(N).
