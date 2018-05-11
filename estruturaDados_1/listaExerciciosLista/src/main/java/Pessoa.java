@@ -2,13 +2,23 @@ public class Pessoa implements Comparable {
 
     private String nome;
     private int idade;
+    private int cpf;
+
+    public int getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, int idade) {
+    public Pessoa(String nome, int idade, int cpf) {
         this.nome = nome;
         this.idade = idade;
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -43,10 +53,10 @@ public class Pessoa implements Comparable {
     @Override
     public boolean equals(Object o) {
         if (o instanceof Pessoa) {
-            return ((Pessoa) o).idade == this.idade || ((Pessoa) o).nome == getNome();
+            return ((Pessoa) o).cpf == this.cpf || ((Pessoa) o).nome == getNome();
         } else if (o != null) {
             //Parse no valor inteiro para Integer
-            return new Integer(this.idade).equals(o) || new String(this.nome).equals(o);
+            return new Integer(this.cpf).equals(o) || new String(this.nome).equals(o);
         } else {
             return false;
         }

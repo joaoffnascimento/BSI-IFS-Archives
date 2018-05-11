@@ -5,6 +5,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws ListaException {
+
         //Adaptar para um programa de testes
         //Fazer os métodos correspondentes a cada uma das funcionalidades
         //Junit
@@ -33,7 +34,7 @@ public class Main {
          * inst of comparable
          * ((comparable)o).compareTo(this.info); ou o inverso
          */
-
+        /*
         ILista listaSEQNO = criarListaSEQNO();
         listaSEQNO.inicializar(5);
 
@@ -90,5 +91,13 @@ public class Main {
         }
 
         listaSEQNO.estahCheia();
+        */
+
+        ListaDupEncNO lista = new ListaDupEncNO();
+        lista.iniciar();
+        lista.inserir(10);
+        lista.inserir(11);
+        lista.exibeLista();
+
     }
 }
