@@ -55,8 +55,6 @@ public class ListaDupEncNO implements IListaDupEncNO {
         public Node() {
         }
 
-        ;
-
         //Retorna o elemento deste nodo
         public Object getDado() {
             return dado;
@@ -112,6 +110,23 @@ public class ListaDupEncNO implements IListaDupEncNO {
         Node auxNode;
 
         if (size == 0) {
+            noCabeca.setProx(newNode);
+            noCabeca.setAnt(newNode);
+
+            newNode.setDado(dado);
+            newNode.setProx(noCauda);
+            newNode.setAnt(noCabeca);
+        } else {
+            auxNode = noCabeca.getProx();
+            auxNode = noCauda.getAnt();
+            newNode.setProx(auxNode.getProx());
+            newNode.setAnt(auxNode.getAnt());
+            newNode.setDado(dado);
+            size++;
+        }
+
+        /*
+        if (size == 0) {
             newNode.setDado(dado);
             newNode.setProx(noCauda);
             newNode.setAnt(noCabeca);
@@ -130,7 +145,7 @@ public class ListaDupEncNO implements IListaDupEncNO {
             auxNode.setProx(newNode);
 
             this.size++;
-        }
+        }*/
     }
 
     public Integer count() {
@@ -174,5 +189,4 @@ public class ListaDupEncNO implements IListaDupEncNO {
         s += "]";
         return s;
     }
-
 }
