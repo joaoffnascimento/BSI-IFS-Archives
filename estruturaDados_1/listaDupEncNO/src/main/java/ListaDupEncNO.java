@@ -2,92 +2,46 @@ public class ListaDupEncNO implements IListaDupEncNO {
 
     //Atributos da ListaDupEncNO
     //Quantidade Elementos
-    private int size;
+    //Classe n
+
     //Sentinelas ou nodos Falsos (nao armazenam nenhum elemento).
-    private Node noCabeca, noCauda;
+    private NoCabeca noCabeca;
+    private Node noCauda;
 
     public int getSize() {
-        return size;
+        return noCabeca.getSize();
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
 
     public Node getNoCabeca() {
         return noCabeca;
     }
 
+    /*
     public void setNoCabeca(Node noCabeca) {
         this.noCabeca = noCabeca;
     }
+    */
 
     public Node getNoCauda() {
         return noCauda;
     }
 
+    /*
     public void setNoCauda(Node noCauda) {
         this.noCauda = noCauda;
     }
-
+    */
     public ListaDupEncNO() {
-        size = 0;
-        noCabeca = new Node(null, null, null);
+
+        noCabeca = new NoCabeca();
         noCauda = new Node(null, null, noCabeca); //Anterior noCabeca
         noCabeca.setProx(noCauda); //Proximo noCauda
     }
 
-    //Node de uma lista duplamente encadeada de objetos
-    public class Node {
-        private Object dado; //Objeto armazenado pelo nodo
-        private Node prox, ant; //Ponteiros para o nodo seguinte e anterior
-
-        /**
-         * Construtor que cria um nodo com os campos fornecidos
-         */
-        public Node(Object e, Node prox, Node ant) {
-            dado = e;
-            this.prox = prox;
-            this.ant = ant;
-        }
-
-        //Construtor padrao
-        public Node() {
-        }
-
-        //Retorna o elemento deste nodo
-        public Object getDado() {
-            return dado;
-        }
-
-        //Atribui o elemento deste nodo
-        public void setDado(Object dado) {
-            this.dado = dado;
-        }
-
-        //Retorna o nodo seguinte a este
-        public Node getProx() {
-            return prox;
-        }
-
-        //Atribui o nodo seguinte a este nodo
-        public void setProx(Node prox) {
-            this.prox = prox;
-        }
-
-        //Retorna o nodo anterior a este
-        public Node getAnt() {
-            return ant;
-        }
-
-        //Atribui o nodo anterior a este nodo
-        public void setAnt(Node ant) {
-            this.ant = ant;
-        }
-    }
 
     public boolean estahVazia() {
-        if (size == 0) {
+        if (noCabeca.getSize() == 0) {
             return true;
         }
         return false;
@@ -100,7 +54,7 @@ public class ListaDupEncNO implements IListaDupEncNO {
 
     //tamanho da lista
     public int tamanhoLista() {
-        return size;
+        return noCabeca.getSize();
     }
 
     //Inserir no inicio
@@ -109,22 +63,28 @@ public class ListaDupEncNO implements IListaDupEncNO {
         Node newNode = new Node();
         Node auxNode;
 
-        if (size == 0) {
+        if (estahVazia()) {
             noCabeca.setProx(newNode);
-            noCabeca.setAnt(newNode);
-
-            newNode.setDado(dado);
             newNode.setProx(noCauda);
             newNode.setAnt(noCabeca);
+            noCauda.setAnt(newNode);
         } else {
+            noCauda.getAnt().setProx(newNode);
+            newNode.setAnt(noCauda.getAnt());
+            newNode.setProx(noCauda);
+            noCauda.setAnt(newNode);
+
+            /*
             auxNode = noCabeca.getProx();
             auxNode = noCauda.getAnt();
             newNode.setProx(auxNode.getProx());
             newNode.setAnt(auxNode.getAnt());
             newNode.setDado(dado);
-            size++;
+            noCabeca.incremente();
+            */
         }
-
+        newNode.setDado(dado);
+        noCabeca.incremente();
         /*
         if (size == 0) {
             newNode.setDado(dado);
