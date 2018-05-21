@@ -97,7 +97,7 @@ public class ListaDupEncNO implements IListaDupEncNO {
                 aux.setProx(null);
                 aux.setAnt(null);
 
-                aux = noCabeca; // AQUI
+                aux = noCabeca; // AQUI DUVIDA
             }
             aux = aux.getProx();
         }
