@@ -1,11 +1,13 @@
 //Node de uma lista duplamente encadeada de objetos
 public class Node {
+
     private Object dado; //Objeto armazenado pelo nodo
     private Node prox, ant; //Ponteiros para o nodo seguinte e anterior
 
     /**
      * Construtor que cria um nodo com os campos fornecidos
      */
+
     public Node(Object e, Node prox, Node ant) {
         dado = e;
         this.prox = prox;
@@ -45,4 +47,18 @@ public class Node {
     public void setAnt(Node ant) {
         this.ant = ant;
     }
+
+    /*
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Pessoa) {
+            return ((Pessoa) o).cpf == this.cpf || ((Pessoa) o).nome == getNome();
+        } else if (o != null) {
+            //Parse no valor inteiro para Integer
+            return new Integer(this.cpf).equals(o) || new String(this.nome).equals(o);
+        } else {
+            return false;
+        }
+    }
+    */
 }

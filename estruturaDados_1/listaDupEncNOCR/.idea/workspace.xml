@@ -22,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IListaDupEncNO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IListaDupEncNO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/IListaDupEncNO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="170">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -34,20 +34,67 @@
       <file leaf-file-name="ListaDupEncNO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ListaDupEncNO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            <state relative-caret-position="190">
+              <caret line="86" column="15" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
               <folding>
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#1092#1093#0" expanded="true" />
+                <element signature="e#1133#1134#0" expanded="true" />
+                <element signature="e#2767#2768#0" expanded="true" />
+                <element signature="e#2795#2796#0" expanded="true" />
+                <element signature="e#2836#2837#0" expanded="true" />
+                <element signature="e#2863#2864#0" expanded="true" />
                 <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+                <element signature="e#2967#2968#0" expanded="true" />
+                <element signature="e#3003#3004#0" expanded="true" />
+                <element signature="e#3043#3044#0" expanded="true" />
+                <element signature="e#3070#3071#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoCabeca.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#544#545#0" expanded="true" />
+                <element signature="e#745#746#0" expanded="true" />
+                <element signature="e#922#923#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListaException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ListaException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+              <folding>
+                <element signature="e#103#104#0" expanded="true" />
+                <element signature="e#129#130#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoCabeca.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/NoCabeca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state>
+              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
               <folding>
                 <element signature="e#63#64#0" expanded="true" />
                 <element signature="e#104#105#0" expanded="true" />
@@ -60,20 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="221">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -93,11 +131,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/a.java" />
         <option value="$PROJECT_DIR$/src/main/java/Pessoa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IListaDupEncNO.java" />
         <option value="$PROJECT_DIR$/src/main/java/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/NoCabeca.java" />
         <option value="$PROJECT_DIR$/src/main/java/ListaDupEncNO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IListaDupEncNO.java" />
       </list>
     </option>
   </component>
@@ -128,30 +166,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="listaDupEncNO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="listaDupEncNO" type="462c0819:PsiDirectoryNode" />
+              <item name="listaDupEncNOCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="listaDupEncNOCR" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="listaDupEncNO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="listaDupEncNO" type="462c0819:PsiDirectoryNode" />
+              <item name="listaDupEncNOCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="listaDupEncNOCR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="listaDupEncNO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="listaDupEncNO" type="462c0819:PsiDirectoryNode" />
+              <item name="listaDupEncNOCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="listaDupEncNOCR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="listaDupEncNO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="listaDupEncNO" type="462c0819:PsiDirectoryNode" />
+              <item name="listaDupEncNOCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="listaDupEncNOCR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -160,6 +195,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,6 +207,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -265,43 +304,45 @@
       <updated>1526611129490</updated>
       <workItem from="1526611131524" duration="96000" />
       <workItem from="1526611279069" duration="42000" />
+      <workItem from="1526867744570" duration="6989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138000" />
+    <option name="totallyTimeSpent" value="7127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3294271" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50277776" side_tool="true" weight="0.24902724" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49722221" weight="0.36316472" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49722221" visible="true" weight="0.36458334" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="1" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.185" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.28552803" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.5911458" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="3" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3294423" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +358,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -337,10 +378,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ListaDupEncNO.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+          <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
+            <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/NoCabeca.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#63#64#0" expanded="true" />
+            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IListaDupEncNO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ListaDupEncNO.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
           <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
             <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -393,7 +530,25 @@
         <state relative-caret-position="1122">
           <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
           <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
             <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -467,22 +622,26 @@
         <state relative-caret-position="2040">
           <caret line="120" selection-start-line="120" selection-end-line="120" />
           <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
             <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ListaException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -493,41 +652,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IListaDupEncNO.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ListaDupEncNO.java">
+    <entry file="file://$PROJECT_DIR$/../listaDupEncNO/src/main/java/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
-          <folding>
-            <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
-          </folding>
+        <state relative-caret-position="445">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="221">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NoCabeca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
           <folding>
             <element signature="e#63#64#0" expanded="true" />
             <element signature="e#104#105#0" expanded="true" />
@@ -536,6 +685,66 @@
             <element signature="e#191#192#0" expanded="true" />
             <element signature="e#225#226#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ListaException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding>
+            <element signature="e#103#104#0" expanded="true" />
+            <element signature="e#129#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ListaDupEncNO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="86" column="15" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
+          <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
+            <element signature="method#mesclar#0;class#ListaDupEncNO#0" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IListaDupEncNO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>

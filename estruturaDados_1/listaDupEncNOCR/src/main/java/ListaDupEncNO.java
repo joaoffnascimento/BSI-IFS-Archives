@@ -8,38 +8,31 @@ public class ListaDupEncNO implements IListaDupEncNO {
     private NoCabeca noCabeca;
     private Node noCauda;
 
-    public int getSize() {
-        return noCabeca.getSize();
-    }
-
-
-    public Node getNoCabeca() {
+    //Getters e Setters
+    protected NoCabeca getNoCabeca() {
         return noCabeca;
     }
 
-    /*
-    public void setNoCabeca(Node noCabeca) {
+    protected void setNoCabeca(NoCabeca noCabeca) {
         this.noCabeca = noCabeca;
     }
-    */
 
-    public Node getNoCauda() {
+    protected Node getNoCauda() {
         return noCauda;
     }
 
-    /*
-    public void setNoCauda(Node noCauda) {
+    protected void setNoCauda(Node noCauda) {
         this.noCauda = noCauda;
     }
-    */
-    public ListaDupEncNO() {
 
+    //Construtor
+    protected ListaDupEncNO() {
         noCabeca = new NoCabeca();
         noCauda = new Node(null, null, noCabeca); //Anterior noCabeca
         noCabeca.setProx(noCauda); //Proximo noCauda
     }
 
-
+    //Metodo Utilitario
     public boolean estahVazia() {
         if (noCabeca.getSize() == 0) {
             return true;
@@ -47,19 +40,31 @@ public class ListaDupEncNO implements IListaDupEncNO {
         return false;
     }
 
-    //Exibir Lista
-    public void exibirLista() {
+    //Exibir Lista ok
+    public String exibirLista() throws ListaException {
+        String saida = "Conteudo da Lista = [";
+        Node aux = this.noCabeca;
 
+        if (estahVazia()) {
+            throw new ListaException("Lista está vazia !");
+        }
+        //Concatenando String para exibir.
+        while (aux != noCauda) { //O(N)
+            if (aux != noCabeca)
+                saida = saida + aux.getDado() + " ";
+            aux = aux.getProx();
+        }
+        saida += "]";
+        return saida;
     }
 
-    //tamanho da lista
+    //tamanho da lista ok
     public int tamanhoLista() {
         return noCabeca.getSize();
     }
 
     //Inserir no inicio
-    public void inserir(Object dado) /*throws ListaException*/ {
-
+    public void inserir(Object dado) {
         Node newNode = new Node();
         Node auxNode;
 
@@ -73,47 +78,30 @@ public class ListaDupEncNO implements IListaDupEncNO {
             newNode.setAnt(noCauda.getAnt());
             newNode.setProx(noCauda);
             noCauda.setAnt(newNode);
-
-            /*
-            auxNode = noCabeca.getProx();
-            auxNode = noCauda.getAnt();
-            newNode.setProx(auxNode.getProx());
-            newNode.setAnt(auxNode.getAnt());
-            newNode.setDado(dado);
-            noCabeca.incremente();
-            */
         }
+        //ok Complexidade O(1)
         newNode.setDado(dado);
         noCabeca.incremente();
-        /*
-        if (size == 0) {
-            newNode.setDado(dado);
-            newNode.setProx(noCauda);
-            newNode.setAnt(noCabeca);
+    }
 
-        } else {
-            auxNode = this.noCabeca;
+    public void remover(Object chave) throws ListaException {
+        int achou = 0;
+        if (estahVazia()) {
+            throw new ListaException("Lista Vazia !");
+        }
 
-            while (auxNode.getProx() != null) {
-                auxNode = auxNode.getProx();
+        Node aux = noCabeca;
+        while (aux != noCauda) {
+            if (aux.getDado() == chave) {
+                (aux.getAnt()).setProx(aux.getProx());
+                (aux.getProx()).setAnt(aux.getAnt());
+                aux.setProx(null);
+                aux.setAnt(null);
+                achou++;
             }
-
-            newNode.setDado(dado);
-            auxNode.setProx(noCauda);
-            newNode.setAnt(auxNode);
-
-            auxNode.setProx(newNode);
-
-            this.size++;
-        }*/
-    }
-
-    public Integer count() {
-        return null;
-    }
-
-    public void remover(Object chave) {
-
+            aux = aux.getProx();
+        }
+        return achou;
     }
 
     public boolean contem(Object dado) {
@@ -134,19 +122,5 @@ public class ListaDupEncNO implements IListaDupEncNO {
 
     public IListaDupEncNO inverter() {
         return null;
-    }
-
-    @Override
-    public String toString() {
-        String s = "[";
-        Node node = noCabeca.getProx();
-        while (node != noCauda) {
-            s += node.getDado();
-            if (node != noCauda)
-                s += ",";
-
-        }
-        s += "]";
-        return s;
     }
 }

@@ -2,15 +2,13 @@ public interface IListaDupEncNO {
 
     //boolean incializarLista();
 
-    int tamanhoLista();
+    int tamanhoLista(); //ok
 
-    void exibirLista();
+    String exibirLista()throws ListaException; //ok
 
-    void inserir(Object dado) throws ListaException;
+    void inserir(Object dado); //ok
 
-    Integer count();
-
-    void remover(Object chave);
+    void remover(Object chave) throws ListaException;
 
     boolean contem(Object dado);
 
