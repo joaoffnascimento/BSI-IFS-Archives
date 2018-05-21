@@ -85,23 +85,22 @@ public class ListaDupEncNO implements IListaDupEncNO {
     }
 
     public void remover(Object chave) throws ListaException {
-        int achou = 0;
         if (estahVazia()) {
             throw new ListaException("Lista Vazia !");
         }
 
         Node aux = noCabeca;
-        while (aux != noCauda) {
+        while (aux != null) {
             if (aux.getDado() == chave) {
                 (aux.getAnt()).setProx(aux.getProx());
                 (aux.getProx()).setAnt(aux.getAnt());
                 aux.setProx(null);
                 aux.setAnt(null);
-                achou++;
+
+                aux = noCabeca; // AQUI
             }
             aux = aux.getProx();
         }
-        return achou;
     }
 
     public boolean contem(Object dado) {
