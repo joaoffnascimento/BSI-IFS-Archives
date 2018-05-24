@@ -4,7 +4,7 @@ public interface IListaDupEncNO {
 
     int tamanhoLista(); //ok
 
-    String exibirLista()throws ListaException; //ok
+    String exibirLista() throws ListaException; //ok
 
     void inserir(Object dado); //ok
 
@@ -14,9 +14,9 @@ public interface IListaDupEncNO {
 
     Object obter(Object chave);
 
-    void mesclar(IListaDupEncNO L);
+    void mesclar(ListaDupEncNO lista, ListaDupEncNO listaDois);
 
     Object[] subconj(int inicio, int fim);
 
-    IListaDupEncNO inverter();
+    ListaDupEncNO inverter();
 }

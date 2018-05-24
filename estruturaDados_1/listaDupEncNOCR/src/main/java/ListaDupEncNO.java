@@ -111,15 +111,30 @@ public class ListaDupEncNO implements IListaDupEncNO {
         return null;
     }
 
-    public void mesclar(IListaDupEncNO L) {
-
+    public void mesclar(ListaDupEncNO lista, ListaDupEncNO listaDois) {
+        Node aux = listaDois.getNoCabeca().getProx();
+        while (aux != listaDois.noCauda) {
+            lista.inserir(aux.getDado());
+            aux = aux.getProx();
+        }
     }
 
     public Object[] subconj(int inicio, int fim) {
+
         return new Object[0];
     }
 
-    public IListaDupEncNO inverter() {
-        return null;
+    public ListaDupEncNO inverter() {
+
+        ListaDupEncNO newLista = new ListaDupEncNO();
+        Node aux = noCauda;
+
+        while (aux.getProx() != null) {
+            newLista.inserir(aux.getDado());
+            aux.setProx(aux.getAnt());
+        }
+
+        return newLista;
+
     }
 }
