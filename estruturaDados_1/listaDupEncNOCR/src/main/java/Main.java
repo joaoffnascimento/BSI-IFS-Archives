@@ -6,7 +6,10 @@ public class Main {
 
     public static void main(String[] args) throws ListaException {
         ListaDupEncNO lista = new ListaDupEncNO();
-        System.out.println(lista.estahVazia());
+        lista.inserirInicio(2);
+        lista.inserirInicio(1);
+        System.out.println(lista.exibirLista());
+/*        System.out.println(lista.estahVazia());
         lista.inserir(1);
         lista.inserir(1);
         lista.inserir(2);
@@ -24,7 +27,8 @@ public class Main {
         listaDois.inserir(5);
         listaDois.inserir(6);
         lista.mesclar(lista, listaDois);
-        System.out.println(lista.exibirLista());
+        System.out.println(lista.exibirLista());*/
+/*
 
         ListaDupEncNO listaInverter = new ListaDupEncNO();
         listaInverter.inserir(1);
@@ -34,6 +38,7 @@ public class Main {
         listaInverter.inverter().exibirLista();
         System.out.println(listaInverter.exibirLista());
 
+*/
 
     }
 }

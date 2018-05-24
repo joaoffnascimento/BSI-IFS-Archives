@@ -63,6 +63,26 @@ public class ListaDupEncNO implements IListaDupEncNO {
         return noCabeca.getSize();
     }
 
+    public void inserirInicio(Object o){
+        Node newNode = new Node();
+        Node auxNode;
+
+        if (estahVazia()) {
+            noCabeca.setProx(newNode);
+            newNode.setProx(noCauda);
+            newNode.setAnt(noCabeca);
+            noCauda.setAnt(newNode);
+        }else{
+            Node aux = noCabeca;
+            newNode.setAnt(aux);
+            aux.getProx().setAnt(newNode);
+            newNode.setProx(aux.getProx());
+            aux.setProx(newNode);
+        }
+        newNode.setDado(o);
+        noCabeca.incremente();
+    }
+
     //Inserir no inicio
     public void inserir(Object dado) {
         Node newNode = new Node();
@@ -111,7 +131,7 @@ public class ListaDupEncNO implements IListaDupEncNO {
         return null;
     }
 
-    public void mesclar(ListaDupEncNO lista, ListaDupEncNO listaDois) {
+    public void mesclar(IListaDupEncNO lista, IListaDupEncNO listaDois) {
         Node aux = listaDois.getNoCabeca().getProx();
         while (aux != listaDois.noCauda) {
             lista.inserir(aux.getDado());
@@ -126,15 +146,6 @@ public class ListaDupEncNO implements IListaDupEncNO {
 
     public ListaDupEncNO inverter() {
 
-        ListaDupEncNO newLista = new ListaDupEncNO();
-        Node aux = noCauda;
-
-        while (aux.getProx() != null) {
-            newLista.inserir(aux.getDado());
-            aux.setProx(aux.getAnt());
-        }
-
-        return newLista;
-
     }
+
 }
