@@ -1,7 +1,7 @@
 public interface IPilha {
-    void empilhar(Object o);
+    void empilhar(Object o); //OK
 
-    Object desempilhar();
+    Object desempilhar(); //OK
 
-    boolean estahVazia();
+    boolean estahVazia(); //OK
 }
