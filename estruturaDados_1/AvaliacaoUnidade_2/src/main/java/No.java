@@ -19,4 +19,9 @@ public class No implements INo{
     public void setProx(No prox) {
         this.prox = prox;
     }
+
+    @Override
+    public String toString() {
+        return "[dado removido =  " + getInfo() + "]";
+    }
 }

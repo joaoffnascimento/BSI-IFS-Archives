@@ -43,6 +43,7 @@ public class Lista implements ILista {
         }
     }
 
+    //O(1) \0/
     public void adicionar(Object o, int pos) throws ListaException {
         No novo = new No();
         novo.setInfo(o);
@@ -65,6 +66,7 @@ public class Lista implements ILista {
         }
     }
 
+    //O(N) ;-;
     public void remover(int pos) throws ListaException {
         No aux = getPrimeiro();
         No anterior = null;
@@ -83,14 +85,16 @@ public class Lista implements ILista {
         }
     }
 
-    public void removeInicio() throws ListaException {
+    public Object removeInicio() throws ListaException {
+        No aux;
         if (estahVazia()) {
             throw new ListaException("Lista esta vazia !");
         } else {
+            aux = getPrimeiro();
             setPrimeiro(getPrimeiro().getProx());
             setQtd(getQtd() - 1);
         }
-
+        return aux;
     }
 
     public void removeFim() throws ListaException {
