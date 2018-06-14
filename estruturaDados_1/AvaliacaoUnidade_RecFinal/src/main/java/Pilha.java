@@ -10,6 +10,7 @@ public class Pilha implements IPilha {
         return p;
     }
 
+
     public int size() {
         return topoPilha + 1;
     }

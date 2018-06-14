@@ -8,8 +8,8 @@ public class Main {
         Pilha aux1 = new Pilha();
         Pilha aux2 = new Pilha();
 
-        aux1.inicializarPilha(10);
-        aux2.inicializarPilha(10);
+        aux1.inicializarPilha(pilhaA.size());
+        aux2.inicializarPilha(pilhaB.size());
 
         if (pilhaA.size() != pilhaB.size()) {
             return false;
@@ -46,14 +46,24 @@ public class Main {
         Pilha pilhaUm = new Pilha();
         Pilha pilhaDois = new Pilha();
 
+        System.out.println(" =============== TESTE 1 CASO =============");
+        //Pilhas diferentes
         pilhaUm.inicializarPilha(10);
-        pilhaDois.inicializarPilha(10);
+        pilhaDois.inicializarPilha(5);
 
 
-        for (int i = 0; i < 10; i++) {
-            pilhaUm.push(i);
-            pilhaDois.push(i);
-        }
+        int a = 0;
+        do{
+            pilhaUm.push(a);
+            a++;
+        }while (!pilhaUm.isFull());
+
+        int b = 0;
+        do{
+            pilhaDois.push(b);
+            b++;
+        }while (!pilhaDois.isFull());
+
 
         System.out.println("Pilhas antes da comparacao = ");
         System.out.println(pilhaUm);
@@ -64,6 +74,36 @@ public class Main {
         System.out.println("Pilhas depois da comparacao = ");
         System.out.println(pilhaUm);
         System.out.println(pilhaDois);
+
+        System.out.println(" =============== TESTE 2 CASO =============");
+        //Pilhas iguais
+        pilhaUm.inicializarPilha(10);
+        pilhaDois.inicializarPilha(10);
+
+
+        a = 0;
+        do{
+            pilhaUm.push(a);
+            a++;
+        }while (!pilhaUm.isFull());
+
+        b = 0;
+        do{
+            pilhaDois.push(b);
+            b++;
+        }while (!pilhaDois.isFull());
+
+
+        System.out.println("Pilhas antes da comparacao = ");
+        System.out.println(pilhaUm);
+        System.out.println(pilhaDois);
+
+        System.out.println(iguais(pilhaUm, pilhaDois));
+
+        System.out.println("Pilhas depois da comparacao = ");
+        System.out.println(pilhaUm);
+        System.out.println(pilhaDois);
+
 
     }
 }
