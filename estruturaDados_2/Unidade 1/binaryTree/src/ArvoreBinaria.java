@@ -15,7 +15,7 @@ public class ArvoreBinaria<T extends Comparable> {
         r = null;
     }
 
-    //Recursivo
+
     public void inserir(T dado) {
         inserir(r, dado);
     }
@@ -25,6 +25,7 @@ public class ArvoreBinaria<T extends Comparable> {
         //O no anterior a raiz nao existe, logo null.
         if (r == null) {
             r = new No<>(dado, null);
+            System.out.println("Criada a raiz = {" + r.getDado() + "}");
             //se ja existe algum valor na arvore
         } else {
             //se o dado a ser inserido for menor que o dado do
@@ -39,6 +40,7 @@ public class ArvoreBinaria<T extends Comparable> {
                     noAtual.setMenor(new No<>(dado));
                     //Referenciar no pai
                     noAtual.getMenor().setNoPai(noAtual);
+                    System.out.println("Inserido o valor {" + noAtual.getMenor().getDado() + "} a esquerda de {" + noAtual.getDado() + "}");
                 }
             } else {
                 //Percorrer a subarvore da direita para inserir um novo no
@@ -51,6 +53,7 @@ public class ArvoreBinaria<T extends Comparable> {
                     noAtual.setMaior(new No<>(dado));
                     //Referenciar no pai
                     noAtual.getMaior().setNoPai(noAtual);
+                    System.out.println("Inserido o valor {" + noAtual.getMaior().getDado() + "} a direita de {" + noAtual.getDado() + "}");
                 }
             }
         }
@@ -143,5 +146,13 @@ public class ArvoreBinaria<T extends Comparable> {
 
     public boolean isVazia() {
         return r == null;
+    }
+
+    public String testeVazia() {
+        if (isVazia()) {
+            return "Arvore vazia !!";
+        } else {
+            return "Arvore possue no mínimo 1 elemento !!";
+        }
     }
 }
