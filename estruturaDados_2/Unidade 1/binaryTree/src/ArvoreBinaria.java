@@ -23,7 +23,6 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
     }
 
     //-------------------------- Metodo Inserir OK -------------------------------------//
-
     public void inserir(T dado) {
         inserir(r, dado);
     }
@@ -47,7 +46,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     //Novo no a esquerda com as devidas referencias
                     noAtual.setMenor(new No<>(dado));
                     //Referenciar no pai
-                    noAtual.getMenor().setNoPai(noAtual);
+                    //noAtual.getMenor().setNoPai(noAtual);
                     System.out.println("Inserido o valor {" + noAtual.getMenor().getDado() + "} a esquerda de {" + noAtual.getDado() + "}");
                 }
             } else {
@@ -60,84 +59,107 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     //Novo no a direita com as devidas referencias
                     noAtual.setMaior(new No<>(dado));
                     //Referenciar no pai
-                    noAtual.getMaior().setNoPai(noAtual);
+                    //noAtual.getMaior().setNoPai(noAtual);
                     System.out.println("Inserido o valor {" + noAtual.getMaior().getDado() + "} a direita de {" + noAtual.getDado() + "}");
                 }
             }
         }
     }
 
-    //----------------------------------- Metodo Busca ------------------------------------------------//
+    //----------------------------------- Metodo Busca (melhorado) ------------------------------------------------//
     public boolean buscar(T dado) {
         return buscar(r, dado);
     }
 
     private boolean buscar(No<T> r, T dado) {
-        boolean achou = true;
+        if (r == null)
+            return false;
 
-        if (r == null) {
-            achou = false;
-        } else if (r.getDado().compareTo(dado) == 0) {
-            achou = true;
-        } else {
-            if (r.getDado().compareTo(dado) >= 0) {
-                achou = buscar(r.getMenor(), dado);
-            } else if (r.getDado().compareTo(dado) < 0) {
-                achou = buscar(r.getMaior(), dado);
-            }
-        }
-        return achou;
+        if (r.getDado().compareTo(dado) == 0)
+            return true;
+
+        if (r.getDado().compareTo(dado) >= 0)
+            return buscar(r.getMenor(), dado);
+
+        return buscar(r.getMaior(), dado);
     }
-    //------------------------------------------------------------------------------------------------//
+    //------------------------- Metodo de remocao com Problemas para remover - caso no cm 2 filhos ------------------//
 
     public void remover(T dado) {
-        remover(r, null, dado);
+        //arvore está vazia
+        if (this.r == null) ;
+            //há apenas a raiz
+        else if (this.getR().getDado() == dado &&
+                this.getR().getMenor() == null &&
+                this.getR().getMaior() == null) {
+            this.r = null;
+        } else {
+            remover(this.getR(), null, dado);
+        }
     }
 
     private void remover(No<T> desejado, No<T> noAnterior, T dado) {
-
-        if (desejado != null) {
-            if (desejado.getDado().compareTo(dado) >= 0) {
-                remover(desejado.getMaior(), noAnterior, dado);
-
-            } else if (desejado.getDado().compareTo(dado) < 0) {
-                //
-                remover(desejado.getMenor(), noAnterior, dado);
-
-            } else if (desejado.getDado().compareTo(dado) == 0) {
-                //Já encontrou o nó desejado
-                //Casos de remoção
-                //Resolve caso de subarvore
-                //Remocao de um no folha
-                if ((desejado.getMenor() == null) && (desejado.getMaior() == null)) {
-
-                }
+        //se o no em questao nao possui o valor a ser removido
+        //Fazer a busca na arvore
+        if (desejado.getDado().compareTo(dado) != 0) {
+            if (desejado.getDado().compareTo(dado) > 0) {
                 if (desejado.getMenor() != null) {
-                    noAnterior.setMenor(desejado.getMenor());
-                    // metodo obter maior elemento do no que possa ter subarvore
-                    No<T> maisDireita = maisDireita(desejado.getMenor());
-                    //jogo de ponteiros
-                    maisDireita.setMaior(desejado.getMaior());
-                } else if (desejado.getMaior() != null) {
-                    //Direita
-                    noAnterior.setMaior(desejado.getMaior());
-                    // metodo obter maior elemento do no que possa ter subarvore
-                    No<T> maisEsquerda = maisEsquerda(desejado.getMenor());
-                    //jogo de ponteiros
-                    maisEsquerda.setMaior(desejado.getMenor());
+                    remover(desejado.getMenor(), desejado, dado);
+                }
+            } else {
+                if (desejado.getMaior() != null) {
+                    remover(desejado.getMaior(), desejado, dado);
                 }
             }
-        }
-    }
+        } // se o no em questao possui o valor a ser removido
+        else if (desejado.getDado().compareTo(dado) == 0){
+            No<T> auxiliar;
+            //Remocao de folha (OK)
+            if ((desejado.getMaior() == null) && (desejado.getMenor() == null)) {
+                //se o no a ser removido for filho direito do pai
+                if (noAnterior.getMaior() == desejado) {
+                    noAnterior.setMaior(null);
+                } else {
+                    noAnterior.setMenor(null);
+                }
+            }
+            //no possui 1 filhoo
+            else if ((desejado.getMaior() == null) || (desejado.getMenor() == null)) {
+                //pegue o antecessor ja que nao tem subarvore a dir
+                if (desejado.getMenor() != null) {
+                    if (desejado == this.r) {
+                        this.r = desejado.getMenor();
+                    } else {
+                        if (desejado.getMenor() != null)
+                            noAnterior.setMaior(desejado.getMenor());
+                        else
+                            noAnterior.setMaior(desejado.getMaior());
+                    }
+                }
+                //pegue o sucessor ja que nao tem subarvore a esq
+                //SE FOR A ARVORE
+                //MAIS DIREITA >>>>>>>>>>>>>
+                else {
+                    if (desejado == this.r) {
+                        No<T> auxiliar02 = maisDireita(desejado)
+                    }
+                    else {
+                        if (desejado.getMaior() != null)
+                            noAnterior.setMaior(desejado.getMaior());
+                        else
+                            noAnterior.setMaior(desejado.getMenor());
+                    }
+                }
+            }
 
-    private void atualizarFilho(T dado, No<T> noPai, No<T> novo) {
-        if (noPai == null) {
-            r = novo;
-        } else {
-            if (noPai.getDado().compareTo(dado) > 0) {
-                noPai.setMenor(novo);
-            } else {
-                noPai.setMaior(novo);
+            /*NO COM DOIS FILHOS CTRL + C NO SUCESSOR CTRL + V
+            NO QUE VAI SER REMOVIDO E REMOVER O SUCESSOR*/
+            //MAIS ESQUERDA <<<<<
+
+            else {
+                auxiliar = maisEsquerda(desejado);
+                desejado.setDado(auxiliar.getDado());
+                remover(desejado.getMaior(), desejado, auxiliar.getDado());
             }
         }
     }

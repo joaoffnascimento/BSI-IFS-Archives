@@ -33,10 +33,33 @@ public class Main {
         arvore.inserir(8.7D);
         arvore.inserir(1D);
         arvore.inserir(6.9D);
+        arvore.inserir(7.9D);
+        arvore.inserir(6.8D);
+
 
         System.out.println();
         arvore.listarArvore();
         System.out.println();
+
+        if(arvore.buscar(8.6d))
+            System.out.println("valor econtrado !!");
+        else System.out.println("Valor nao encontrado !!");
+
+        if(arvore.buscar(8.7d))
+            System.out.println("valor econtrado !!");
+        else System.out.println("Valor nao encontrado !!");
+        System.out.println("////////////////////////////////////////////");
+        arvore.remover(8.7d);
+        arvore.remover(7.9d);
+        arvore.remover(8d);
+        arvore.remover(3d);
+        arvore.remover(2.3d);
+        arvore.remover(1d);
+        arvore.remover(2d);
+        arvore.remover(5d);    ///// PROBLEMA
+        arvore.remover(5.2d); ////
+        arvore.remover(6.9d);
+        arvore.listarArvore();
 
     }
 }
