@@ -1,0 +1,118 @@
+/**
+ * @author João F.F. Nascimento em 11/09/2018
+ * @project binaryTree
+ */
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class Main {
+    public static void main(String[] args) {
+        /*
+            E criada a arvore e sao definidos os valores desejados
+         */
+        //Cria uma arvore binaria com o construtor padrao
+        ArvoreBinaria<Double> arvore = new ArvoreBinaria<Double>();
+        //Teste do metodo vazio
+        System.out.println(arvore.testeVazia());
+
+        arvore.inserir(5D);//Insere o dado 5
+        System.out.println(arvore.testeVazia());// testa se realmente foi inserido o dado.
+
+        System.out.println();
+        //Listando arvore de forma crescente
+        arvore.listarArvore();
+        System.out.println();
+
+        //Arvore teste com 10 elementos
+        arvore.inserir(2D);
+        arvore.inserir(3D);
+        arvore.inserir(6D);
+        arvore.inserir(7D);
+        arvore.inserir(8D);
+        arvore.inserir(2.3D);
+        arvore.inserir(5.2D);
+        arvore.inserir(8.7D);
+        arvore.inserir(1D);
+        arvore.inserir(6.9D);
+
+        System.out.println();
+        arvore.listarArvore();
+        System.out.println();
+        try {
+
+            /*
+             * A Classe FileOutputStream é responsável por criar
+             * o arquivo fisicamente no disco, assim poderemos realizar a
+             * escrita neste.
+             * */
+            FileOutputStream fout = new FileOutputStream("a:\\arvore.dat");
+
+            /*
+             * A Classe ObjectOutputStream escreve os objetos no FileOutputStream
+             * */
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+
+            /*
+             * Veja aqui a mágica ocorrendo: Estamos gravando um objeto
+             * do tipo Address no arquivo address.ser. Atenção: O nosso
+             * objeto Address que está sendo gravado, já é gravado de forma
+             * serializada
+             * */
+            oos.writeObject(arvore);
+
+            oos.close();
+            System.out.println("Done");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+
+            /*
+             * Responsável por carregar o arquivo address.ser
+             * */
+            FileInputStream fin = new FileInputStream("c:\\address.ser");
+
+            /*
+             * Responsável por ler o objeto referente ao arquivo
+             * */
+            ObjectInputStream ois = new ObjectInputStream(fin);
+
+            /*
+             * Aqui a mágica é feita, onde os bytes presentes no arquivo address.ser
+             * são convertidos em uma instância de Address.
+             * */
+            arvore = (ArvoreBinaria<Double>) ois.readObject();
+            ois.close();
+
+            arvore.listarArvore();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+
+--------------------------- API GSON -----------------------------
+
+Gson gson = new Gson();
+        String json = gson.toJson(arvore);
+
+        BufferedWriter fr = new BufferedWriter(new FileWriter("a:\\string.txt", true));//Abre arquivo para escrita
+        fr.write(json);//escreve a arvore inteira no arquivo
+        fr.flush();
+        fr.close();
+
+        BufferedReader fw = new BufferedReader(new FileReader(("a:\\string.txt")));
+
+        String line = null;
+        String message = new String();
+        final StringBuffer buffer = new StringBuffer();
+        while (fw.ready()) {
+            buffer.append(fw.readLine());
+        }
+        System.out.println(buffer);

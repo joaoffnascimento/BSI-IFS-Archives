@@ -1,4 +1,11 @@
-public class ArvoreBinaria<T extends Comparable> {
+/**
+ * @author João F.F. Nascimento em 11/09/2018
+ * @project binaryTree
+ */
+
+import java.io.Serializable;
+
+public class ArvoreBinaria<T extends Comparable> implements Serializable {
 
      /*     Compare to
             -1 quando a < b
@@ -15,6 +22,7 @@ public class ArvoreBinaria<T extends Comparable> {
         r = null;
     }
 
+    //-------------------------- Metodo Inserir OK -------------------------------------//
 
     public void inserir(T dado) {
         inserir(r, dado);
@@ -59,39 +67,79 @@ public class ArvoreBinaria<T extends Comparable> {
         }
     }
 
-    public No<T> remover(T dado) {
-        return remover(r, null, dado);
+    //----------------------------------- Metodo Busca ------------------------------------------------//
+    public boolean buscar(T dado) {
+        return buscar(r, dado);
     }
 
-    private No<T> remover(No<T> corrente, No<T> ant, T dado) {
+    private boolean buscar(No<T> r, T dado) {
+        boolean achou = true;
 
-        if (corrente != null) {
-            if (corrente.getDado().compareTo(dado) >= 0) {
-                remover(corrente.getMaior(), corrente, dado);
-            } else if (corrente.getDado().compareTo(dado) < 0) {
+        if (r == null) {
+            achou = false;
+        } else if (r.getDado().compareTo(dado) == 0) {
+            achou = true;
+        } else {
+            if (r.getDado().compareTo(dado) >= 0) {
+                achou = buscar(r.getMenor(), dado);
+            } else if (r.getDado().compareTo(dado) < 0) {
+                achou = buscar(r.getMaior(), dado);
+            }
+        }
+        return achou;
+    }
+    //------------------------------------------------------------------------------------------------//
+
+    public void remover(T dado) {
+        remover(r, null, dado);
+    }
+
+    private void remover(No<T> desejado, No<T> noAnterior, T dado) {
+
+        if (desejado != null) {
+            if (desejado.getDado().compareTo(dado) >= 0) {
+                remover(desejado.getMaior(), noAnterior, dado);
+
+            } else if (desejado.getDado().compareTo(dado) < 0) {
                 //
-                remover(corrente.getMenor(), corrente, dado);
-            } else if (corrente.getDado().compareTo(dado) == 0) {
+                remover(desejado.getMenor(), noAnterior, dado);
+
+            } else if (desejado.getDado().compareTo(dado) == 0) {
                 //Já encontrou o nó desejado
                 //Casos de remoção
                 //Resolve caso de subarvore
-                if (corrente.getMenor() != null) {
-                    ant.setMenor(corrente.getMenor());
+                //Remocao de um no folha
+                if ((desejado.getMenor() == null) && (desejado.getMaior() == null)) {
+
+                }
+                if (desejado.getMenor() != null) {
+                    noAnterior.setMenor(desejado.getMenor());
                     // metodo obter maior elemento do no que possa ter subarvore
-                    No<T> maisDireita = maisDireita(corrente.getMenor());
+                    No<T> maisDireita = maisDireita(desejado.getMenor());
                     //jogo de ponteiros
-                    maisDireita.setMaior(corrente.getMaior());
-                } else if (corrente.getMaior() != null) {
+                    maisDireita.setMaior(desejado.getMaior());
+                } else if (desejado.getMaior() != null) {
                     //Direita
-                    ant.setMaior(corrente.getMaior());
+                    noAnterior.setMaior(desejado.getMaior());
                     // metodo obter maior elemento do no que possa ter subarvore
-                    No<T> maisEsquerda = maisEsquerda(corrente.getMenor());
+                    No<T> maisEsquerda = maisEsquerda(desejado.getMenor());
                     //jogo de ponteiros
-                    maisEsquerda.setMaior(corrente.getMenor());
+                    maisEsquerda.setMaior(desejado.getMenor());
                 }
             }
         }
-        return r;
+    }
+
+    private void atualizarFilho(T dado, No<T> noPai, No<T> novo) {
+        if (noPai == null) {
+            r = novo;
+        } else {
+            if (noPai.getDado().compareTo(dado) > 0) {
+                noPai.setMenor(novo);
+            } else {
+                noPai.setMaior(novo);
+            }
+        }
     }
 
     //listar recursivamente

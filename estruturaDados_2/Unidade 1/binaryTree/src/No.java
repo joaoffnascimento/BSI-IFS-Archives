@@ -1,5 +1,13 @@
-public class No<T extends Comparable> {
-    private No<T> menor, maior, noPai;
+/**
+ * @author João F.F. Nascimento em 11/09/2018
+ * @project binaryTree
+ */
+
+import java.io.Serializable;
+
+public class No<T extends Comparable> implements Serializable {
+    private No<T> menor, maior;
+    transient No<T> noPai;
     private T dado;
 
     public No(T dado) {
@@ -15,7 +23,7 @@ public class No<T extends Comparable> {
         this.noPai = noPai;
     }
 
-    public No(T dado, No<T> anterior){
+    public No(T dado, No<T> anterior) {
         this.dado = dado;
         this.noPai = anterior;
     }
