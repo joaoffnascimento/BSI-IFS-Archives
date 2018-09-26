@@ -133,7 +133,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     } else {
                         noAnterior.setMenor(desejado.getMenor());
                     }
-                //pegue o antecessor ja que nao tem subarvore a ESQUERDA
+                    //pegue o antecessor ja que nao tem subarvore a ESQUERDA
                 } else if (desejado.getMaior() != null) {
                     if (desejado.getDado().compareTo(r.getDado()) > 0) {
                         noAnterior.setMaior(desejado.getMaior());
@@ -142,46 +142,25 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     }
 
                 }
-            }else{
+            } else {
                 //2 filhos, mais a direita da esquerda
-                if(desejado.getMenor().getMaior() == null){
-                    desejado.getMenor().setMaior(desejado.getMaior());
-                    noAnterior.setMaior(desejado.getMenor());
-                }
-            }
-                if (desejado == this.r) {
-                    // tem alguem a esquerda se nao ter ngm a esquerda
-                    this.r = desejado.getMenor();
-                } else {
-                    if (desejado.getMenor() != null)
-                        noAnterior.setMaior(desejado.getMenor());
-                    else
+                if (desejado.getDado().compareTo(r.getDado()) > 0) {
+                    if (desejado.getMaior().getMenor() == null) {
+                        //caso que nao tem que percorrer
+                        desejado.getMaior().setMenor(noAnterior.getMaior().getMenor());
                         noAnterior.setMaior(desejado.getMaior());
-                }
-            }
-            //pegue o sucessor ja que nao tem subarvore a esq
-            else {
-                if (desejado == this.r) {
-                    this.r = desejado.getMaior();
+                    }
                 } else {
-                    if (desejado.getMaior() != null)
-                        noAnterior.setMaior(desejado.getMaior());
-                    else
-                        noAnterior.setMaior(desejado.getMenor());
+                    if (desejado.getMenor().getMaior() == null) {
+                        //caso que nao tem que percorrer
+                        desejado.getMenor().setMaior(noAnterior.getMenor().getMaior());
+                        noAnterior.setMenor(desejado.getMenor());
+                    }
                 }
+
             }
         }
-
-            /*NO COM DOIS FILHOS CTRL + C NO SUCESSOR CTRL + V
-            NO QUE VAI SER REMOVIDO E REMOVER O SUCESSOR*/
-        //MAIS ESQUERDA <<<<<
-
-/*        else {
-            auxiliar = maisEsquerda(desejado);
-            desejado.setDado(auxiliar.getDado());
-            remover(desejado.getMaior(), desejado, auxiliar.getDado());*/
-
-
+    }
 
     //listar recursivamente
     public void listarArvore() {
@@ -216,7 +195,8 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         return maisDireita(aux.getMaior());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }*/
-
+    //ALTERACOES NESTES METODOS PARA PEGAR A REFERENCIA DO ANTERIOR DO
+    //ULTIMO NO AO PERCORRER A EXTREMA DIREITA OU ESQUERDA
     private No<T> maisDireita(No<T> aux, No<T> anterior) {
         if (aux.getMaior() == null) {
             return anterior;

@@ -29,9 +29,13 @@ public class Main {
         arvore.inserir(4D);
         arvore.inserir(8D);
         arvore.inserir(4.2D);
-        //arvore.inserir(0d);
+        arvore.inserir(5.5d);
         arvore.inserir(1d);
+        System.out.println("before");
+        arvore.listarArvore();
         arvore.remover(3d);
+        System.out.println("after");
+        arvore.listarArvore();
         /*arvore.inserir(8.7D);
         arvore.inserir(1D);
         arvore.inserir(6.9D);
