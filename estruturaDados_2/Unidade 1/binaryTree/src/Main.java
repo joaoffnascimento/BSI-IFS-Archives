@@ -23,21 +23,23 @@ public class Main {
         System.out.println();
 
         //Arvore teste com 10 elementos
-        arvore.inserir(2D);
         arvore.inserir(3D);
         arvore.inserir(6D);
-        arvore.inserir(7D);
+        //arvore.inserir(1D);
+        arvore.inserir(4D);
         arvore.inserir(8D);
-        arvore.inserir(2.3D);
-        arvore.inserir(5.2D);
-        arvore.inserir(8.7D);
+        arvore.inserir(4.2D);
+        //arvore.inserir(0d);
+        arvore.inserir(1d);
+        arvore.remover(3d);
+        /*arvore.inserir(8.7D);
         arvore.inserir(1D);
         arvore.inserir(6.9D);
         arvore.inserir(7.9D);
         arvore.inserir(6.8D);
 
-
-        System.out.println();
+*/
+/*        System.out.println();
         arvore.listarArvore();
         System.out.println();
 
@@ -55,11 +57,10 @@ public class Main {
         arvore.remover(3d);
         arvore.remover(2.3d);
         arvore.remover(1d);
-        arvore.remover(2d);
-        arvore.remover(5d);    ///// PROBLEMA
-        arvore.remover(5.2d); ////
-        arvore.remover(6.9d);
-        arvore.listarArvore();
+        arvore.remover(2d);*/
+        //arvore.remover(5d);    ///// PROBLEMA
+        //arvore.remover(5.2d); ////
+        //arvore.listarArvore();
 
     }
 }

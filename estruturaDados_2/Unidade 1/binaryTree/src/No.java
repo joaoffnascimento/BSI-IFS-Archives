@@ -7,25 +7,25 @@ import java.io.Serializable;
 
 public class No<T extends Comparable> implements Serializable {
     private No<T> menor, maior;
-    transient No<T> noPai;
+    //transient No<T> noPai;
     private T dado;
 
     public No(T dado) {
         this.menor = menor;
         this.maior = maior;
         this.dado = dado;
-        this.noPai = noPai;
+        //this.noPai = noPai;
     }
 
     public No() {
         this.menor = menor;
         this.maior = maior;
-        this.noPai = noPai;
+        //this.noPai = noPai;
     }
 
     public No(T dado, No<T> anterior) {
         this.dado = dado;
-        this.noPai = anterior;
+        //this.noPai = anterior;
     }
 
 
@@ -53,11 +53,11 @@ public class No<T extends Comparable> implements Serializable {
         this.dado = dado;
     }
 
-    public No<T> getNoPai() {
+    /*public No<T> getNoPai() {
         return noPai;
     }
 
     public void setNoPai(No<T> noPai) {
         this.noPai = noPai;
-    }
+    }*/
 }

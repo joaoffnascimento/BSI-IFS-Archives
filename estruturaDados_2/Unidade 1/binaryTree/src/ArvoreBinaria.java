@@ -112,7 +112,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                 }
             }
         } // se o no em questao possui o valor a ser removido
-        else if (desejado.getDado().compareTo(dado) == 0){
+        else if (desejado.getDado().compareTo(dado) == 0) {
             No<T> auxiliar;
             //Remocao de folha (OK)
             if ((desejado.getMaior() == null) && (desejado.getMenor() == null)) {
@@ -123,46 +123,65 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     noAnterior.setMenor(null);
                 }
             }
-            //no possui 1 filhoo
+            //Remocao de NO QUE POSSUA 1 FILHO (OK)
             else if ((desejado.getMaior() == null) || (desejado.getMenor() == null)) {
-                //pegue o antecessor ja que nao tem subarvore a dir
+                //pegue o antecessor ja que nao tem subarvore a DIREITA
                 if (desejado.getMenor() != null) {
-                    if (desejado == this.r) {
-                        this.r = desejado.getMenor();
+                    //ESQUEMA MAROTO PARA SABER QUAL LADO DA ARVORE TEM QUE ALTERAR
+                    if (desejado.getDado().compareTo(r.getDado()) > 0) {
+                        noAnterior.setMaior(desejado.getMenor());
                     } else {
-                        if (desejado.getMenor() != null)
-                            noAnterior.setMaior(desejado.getMenor());
-                        else
-                            noAnterior.setMaior(desejado.getMaior());
+                        noAnterior.setMenor(desejado.getMenor());
                     }
+                //pegue o antecessor ja que nao tem subarvore a ESQUERDA
+                } else if (desejado.getMaior() != null) {
+                    if (desejado.getDado().compareTo(r.getDado()) > 0) {
+                        noAnterior.setMaior(desejado.getMaior());
+                    } else {
+                        noAnterior.setMenor(desejado.getMaior());
+                    }
+
                 }
-                //pegue o sucessor ja que nao tem subarvore a esq
-                //SE FOR A ARVORE
-                //MAIS DIREITA >>>>>>>>>>>>>
-                else {
-                    if (desejado == this.r) {
-                        No<T> auxiliar02 = maisDireita(desejado)
-                    }
-                    else {
-                        if (desejado.getMaior() != null)
-                            noAnterior.setMaior(desejado.getMaior());
-                        else
-                            noAnterior.setMaior(desejado.getMenor());
-                    }
+            }else{
+                //2 filhos, mais a direita da esquerda
+                if(desejado.getMenor().getMaior() == null){
+                    desejado.getMenor().setMaior(desejado.getMaior());
+                    noAnterior.setMaior(desejado.getMenor());
                 }
             }
+                if (desejado == this.r) {
+                    // tem alguem a esquerda se nao ter ngm a esquerda
+                    this.r = desejado.getMenor();
+                } else {
+                    if (desejado.getMenor() != null)
+                        noAnterior.setMaior(desejado.getMenor());
+                    else
+                        noAnterior.setMaior(desejado.getMaior());
+                }
+            }
+            //pegue o sucessor ja que nao tem subarvore a esq
+            else {
+                if (desejado == this.r) {
+                    this.r = desejado.getMaior();
+                } else {
+                    if (desejado.getMaior() != null)
+                        noAnterior.setMaior(desejado.getMaior());
+                    else
+                        noAnterior.setMaior(desejado.getMenor());
+                }
+            }
+        }
 
             /*NO COM DOIS FILHOS CTRL + C NO SUCESSOR CTRL + V
             NO QUE VAI SER REMOVIDO E REMOVER O SUCESSOR*/
-            //MAIS ESQUERDA <<<<<
+        //MAIS ESQUERDA <<<<<
 
-            else {
-                auxiliar = maisEsquerda(desejado);
-                desejado.setDado(auxiliar.getDado());
-                remover(desejado.getMaior(), desejado, auxiliar.getDado());
-            }
-        }
-    }
+/*        else {
+            auxiliar = maisEsquerda(desejado);
+            desejado.setDado(auxiliar.getDado());
+            remover(desejado.getMaior(), desejado, auxiliar.getDado());*/
+
+
 
     //listar recursivamente
     public void listarArvore() {
@@ -170,7 +189,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
     }
 
     /*private void listarPreOrdem(No<T> no){
-        if(no != null){
+        if( no != null){
             System.out.println(no.getDado() + " ");
             listarPreOrdem(no.getMenor());
             listarPreOrdem(no.getMaior());
@@ -190,11 +209,21 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
     // Menor, procurar o maior.
 
     //----------------------------------------------------------------------------------------------------
-    private No<T> maisDireita(No<T> aux) {
+/*    private No<T> maisDireita(No<T> aux) {
         if (aux.getMaior() == null) {
             return aux;
         }
         return maisDireita(aux.getMaior());
+        //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
+    }*/
+
+    private No<T> maisDireita(No<T> aux, No<T> anterior) {
+        if (aux.getMaior() == null) {
+            return anterior;
+        } else {
+            anterior = maisDireita(aux.getMaior(), aux);
+        }
+        return anterior;
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }
 
