@@ -173,6 +173,18 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                     desejado.setDado(extremo.getDado());
                     remover(extremo, anteriorExtremo, extremo.getDado());
                 }
+
+                //Remover valor do topo
+                if ((r.getDado().compareTo(dado) == 0) && noAnterior == null) {
+                    if (r.getMaior() == null) {
+                        r = null;
+                    } else {
+                        No<T> auxExtremEsq = maisEsquerda(desejado.getMaior());
+                        r.setDado(auxExtremEsq.getDado());
+                        remover(auxExtremEsq, r, auxExtremEsq.getDado());
+                    }
+                }
+
             }
         }
     }
@@ -218,6 +230,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         return maisDireita(aux.getMaior());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }
+
     private No<T> maisEsquerda(No<T> aux) {
         if (aux.getMenor() == null) {
             return aux;
