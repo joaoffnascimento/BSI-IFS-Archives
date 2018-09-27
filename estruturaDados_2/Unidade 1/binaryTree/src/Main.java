@@ -30,7 +30,12 @@ public class Main {
         arvore.inserir(8D);
         arvore.inserir(4.2D);
         arvore.inserir(5.5d);
-        arvore.inserir(1d);
+        arvore.inserir(1.2d);
+        arvore.inserir(1.5d);
+        arvore.inserir(2d);
+        arvore.inserir(7.9d);
+        arvore.inserir(7.8d);
+        arvore.inserir(7.7d);
         System.out.println("before");
         arvore.listarArvore();
         arvore.remover(3d);
@@ -65,6 +70,5 @@ public class Main {
         //arvore.remover(5d);    ///// PROBLEMA
         //arvore.remover(5.2d); ////
         //arvore.listarArvore();
-
     }
 }

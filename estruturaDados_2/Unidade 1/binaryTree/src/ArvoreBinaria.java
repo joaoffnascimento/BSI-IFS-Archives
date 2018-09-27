@@ -143,7 +143,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
 
                 }
             } else {
-                //2 filhos, mais a direita da esquerda
+                //2 filhos, caso simples
                 if (desejado.getDado().compareTo(r.getDado()) > 0) {
                     if (desejado.getMaior().getMenor() == null) {
                         //caso que nao tem que percorrer
@@ -157,10 +157,26 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                         noAnterior.setMenor(desejado.getMenor());
                     }
                 }
+                //2 filhos caso que tem que percorrer a extrema esq ou dir
+                //fazendo isso eu vou saber quem e o anterior ao mais esquerdo da direita
+                //para poder quebrar a ligacao entre o anterior e o ultimo
+                //e guardar o valor do ultimo para substituir pelo que vai ser apagado
 
+                if (desejado.getDado().compareTo(r.getDado()) > 0) {//problema
+                    No<T> extremo = maisEsquerda(desejado.getMaior());
+                    No<T> anteriorExtremo = anteriorMaisEsquerda(desejado.getMaior(), noAnterior);
+                    desejado.setDado(extremo.getDado());
+                    remover(extremo, anteriorExtremo, extremo.getDado());
+                } else {//ok
+                    No<T> extremo = maisDireita(desejado.getMenor());
+                    No<T> anteriorExtremo = anteriorMaisDireita(desejado.getMenor(), noAnterior);
+                    desejado.setDado(extremo.getDado());
+                    remover(extremo, anteriorExtremo, extremo.getDado());
+                }
             }
         }
     }
+
 
     //listar recursivamente
     public void listarArvore() {
@@ -195,23 +211,40 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         return maisDireita(aux.getMaior());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }*/
+    private No<T> maisDireita(No<T> aux) {
+        if (aux.getMaior() == null) {
+            return aux;
+        }
+        return maisDireita(aux.getMaior());
+        //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
+    }
+    private No<T> maisEsquerda(No<T> aux) {
+        if (aux.getMenor() == null) {
+            return aux;
+        }
+        return maisDireita(aux.getMenor());
+        //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
+    }
     //ALTERACOES NESTES METODOS PARA PEGAR A REFERENCIA DO ANTERIOR DO
     //ULTIMO NO AO PERCORRER A EXTREMA DIREITA OU ESQUERDA
-    private No<T> maisDireita(No<T> aux, No<T> anterior) {
+
+    private No<T> anteriorMaisDireita(No<T> aux, No<T> anterior) {
         if (aux.getMaior() == null) {
             return anterior;
         } else {
-            anterior = maisDireita(aux.getMaior(), aux);
+            anterior = anteriorMaisDireita(aux.getMaior(), aux);
         }
         return anterior;
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }
 
-    private No<T> maisEsquerda(No<T> aux) {
+    private No<T> anteriorMaisEsquerda(No<T> aux, No<T> anterior) {
         if (aux.getMenor() == null) {
-            return aux;
+            return anterior;
+        } else {
+            anterior = anteriorMaisEsquerda(aux.getMenor(), aux);
         }
-        return maisEsquerda(aux.getMenor());
+        return anterior;
     }
 
 
