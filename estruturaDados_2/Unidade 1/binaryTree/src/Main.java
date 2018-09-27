@@ -38,7 +38,7 @@ public class Main {
         arvore.inserir(7.7d);
         System.out.println("before");
         arvore.listarArvore();
-        arvore.remover(3d);
+        arvore.remover(6d);
         System.out.println("after");
         arvore.listarArvore();
         /*arvore.inserir(8.7D);

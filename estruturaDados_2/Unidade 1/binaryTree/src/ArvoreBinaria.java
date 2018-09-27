@@ -162,7 +162,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
                 //para poder quebrar a ligacao entre o anterior e o ultimo
                 //e guardar o valor do ultimo para substituir pelo que vai ser apagado
 
-                if (desejado.getDado().compareTo(r.getDado()) > 0) {//problema
+                if (desejado.getDado().compareTo(r.getDado()) > 0) {//ok
                     No<T> extremo = maisEsquerda(desejado.getMaior());
                     No<T> anteriorExtremo = anteriorMaisEsquerda(desejado.getMaior(), noAnterior);
                     desejado.setDado(extremo.getDado());
@@ -222,7 +222,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         if (aux.getMenor() == null) {
             return aux;
         }
-        return maisDireita(aux.getMenor());
+        return maisEsquerda(aux.getMenor());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }
     //ALTERACOES NESTES METODOS PARA PEGAR A REFERENCIA DO ANTERIOR DO
