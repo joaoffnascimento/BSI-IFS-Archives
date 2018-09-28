@@ -22,7 +22,7 @@ public class Main {
         arvore.listarArvore();
         System.out.println();
 
-        //Arvore teste com 10 elementos
+        //Arvore JogoAdivinhacao com 10 elementos
         arvore.inserir(3D);
         arvore.inserir(6D);
         //arvore.inserir(1D);

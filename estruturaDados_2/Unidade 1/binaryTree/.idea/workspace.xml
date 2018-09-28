@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbce60ba-4a11-4405-bcc2-f0640379a229" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ArvoreBinaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArvoreBinaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries (1)/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries (1)/gson_2_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/binaryTree/arquivoAuxiliar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/binaryTree/arquivoAuxiliar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arquivoAuxiliar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/arquivoAuxiliar.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,37 +23,39 @@
     <session id="-1062799156">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="6" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="24" />
+          <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="6" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="24" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2496" />
+          <entry key="dummy" value="55" />
+          <entry key="java" value="3031" />
           <entry key="txt" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2496" />
-          <entry key="PLAIN_TEXT" value="83" />
+          <entry key="JAVA" value="3031" />
+          <entry key="PLAIN_TEXT" value="138" />
         </counts>
       </usages-collector>
     </session>
@@ -57,72 +64,51 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="12" />
+          <entry key="java" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="12" />
+          <entry key="JAVA" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2309" />
+          <entry key="java" value="2007" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2309" />
+          <entry key="JAVA" value="2007" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/No.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-              <folding>
-                <element signature="e#933#934#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ArvoreBinaria.java">
+        <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="184" column="21" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
+            <state relative-caret-position="238">
+              <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#8010#8011#0" expanded="true" />
-                <element signature="e#8049#8050#0" expanded="true" />
-                <element signature="e#10240#10241#0" expanded="true" />
-                <element signature="e#10264#10265#0" expanded="true" />
-                <element signature="e#10297#10298#0" expanded="true" />
-                <element signature="e#10323#10324#0" expanded="true" />
-                <element signature="e#10355#10356#0" expanded="true" />
-                <element signature="e#10387#10388#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/No.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -130,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arquivoAuxiliar.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
-              <caret line="117" column="35" selection-start-line="101" selection-end-line="117" selection-end-column="35" />
+            <state relative-caret-position="302">
+              <caret line="117" column="35" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="117" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -149,6 +135,13 @@
         <option value="$PROJECT_DIR$/src/No.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ArvoreBinaria.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/NoArvoreBinaria.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/ArvoreMain.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/ArvoreBinariaAdapJogo.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/AnimalInterface.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/No.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/IPergunta.java" />
+        <option value="$PROJECT_DIR$/src/JogoAdivinhacao/Main.java" />
       </list>
     </option>
   </component>
@@ -169,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -183,20 +175,28 @@
               <item name="binaryTree" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="binaryTree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="binaryTree" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="JogoAdivinhacao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538011183535" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538093834909" />
     <property name="last_opened_file_path" value="D:/Área de Trabalho/arvore-binaria-de-busca-master" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\João F.F. Nascimento\Google Drive\BSI - IFS\2018.2 Estrutura de Dados II\OK\BitBucket\currentuser-repository\estruturaDados_2\Unidade 1\binaryTree\src\JogoAdivinhacao" />
       <recent name="D:\Google Drive\BSI - IFS\2018.2 Estrutura de Dados II\OK\BitBucket\currentuser-repository\estruturaDados_2\Unidade 1\binaryTree\src\teste" />
     </key>
   </component>
@@ -212,7 +212,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JogoAdivinhacao.Main" />
+      <module name="binaryTree" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JogoAdivinhacao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="binaryTree" />
@@ -221,11 +234,11 @@
       </method>
     </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="teste.Test" />
+      <option name="MAIN_CLASS_NAME" value="JogoAdivinhacao.Test" />
       <module name="binaryTree" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="teste.*" />
+          <option name="PATTERN" value="JogoAdivinhacao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -236,9 +249,11 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test" />
       </list>
@@ -260,19 +275,19 @@
       <workItem from="1537790049586" duration="1529000" />
       <workItem from="1537840280495" duration="132000" />
       <workItem from="1537840650540" duration="11361000" />
-      <workItem from="1537917496831" duration="18546000" />
-      <workItem from="1538018862277" duration="3115000" />
+      <workItem from="1537917496831" duration="19257000" />
+      <workItem from="1538078770830" duration="2033000" />
+      <workItem from="1538085609052" duration="6297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38631000" />
+    <option name="totallyTimeSpent" value="44557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="814" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3181234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -280,14 +295,14 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23548387" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.41612902" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36290324" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29193547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32580644" />
@@ -303,7 +318,7 @@
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3181234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3143236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -312,8 +327,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23548387" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.41612902" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37281293" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35904256" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -321,7 +336,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32580644" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32845744" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -341,16 +356,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ArvoreBinaria.java</url>
-          <line>177</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="desejado" />
@@ -362,14 +367,22 @@
         <watch expression="extremo.menor" />
         <watch expression="arvore" />
         <watch expression="arvore" language="JAVA" />
+        <watch expression="main" />
+        <watch expression="main" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/teste/No.java" />
-    <entry file="file://$PROJECT_DIR$/src/teste/ArvoreBuscaBinaria.java" />
-    <entry file="file://$PROJECT_DIR$/src/teste/Test.java" />
-    <entry file="file://$USER_HOME$/Desktop/EstruturaDadosII/src/arvoreBinaria/Arvore.java" />
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/ArvoreBuscaBinaria.java" />
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/Test.java" />
+    <entry file="file://D:/Área de Trabalho/EstruturaDadosII/src/arvoreBinaria/Arvore.java" />
+    <entry file="file://$USER_HOME$/Desktop/EstruturaDadosII/src/arvoreBinaria/Arvore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/No.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -380,41 +393,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arquivoAuxiliar.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="35" selection-start-line="101" selection-end-line="117" selection-end-column="35" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/ArvoreBinariaAdapJogo.java" />
+    <entry file="file://$USER_HOME$/Desktop/EstruturaDadosII/src/jogoErroVersaoGeorge/Principal.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$USER_HOME$/Desktop/EstruturaDadosII/src/jogoErroVersaoGeorge/Arvore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Área de Trabalho/EstruturaDadosII/src/arvoreBinaria/Arvore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="81" column="38" lean-forward="true" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+        <state relative-caret-position="-782">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ArvoreBinaria.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="184" column="21" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
+        <state relative-caret-position="2227">
+          <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#8010#8011#0" expanded="true" />
-            <element signature="e#8049#8050#0" expanded="true" />
-            <element signature="e#10240#10241#0" expanded="true" />
-            <element signature="e#10264#10265#0" expanded="true" />
-            <element signature="e#10297#10298#0" expanded="true" />
-            <element signature="e#10323#10324#0" expanded="true" />
-            <element signature="e#10355#10356#0" expanded="true" />
-            <element signature="e#10387#10388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivoAuxiliar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="117" column="35" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="117" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/IPergunta.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/No.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JogoAdivinhacao/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
