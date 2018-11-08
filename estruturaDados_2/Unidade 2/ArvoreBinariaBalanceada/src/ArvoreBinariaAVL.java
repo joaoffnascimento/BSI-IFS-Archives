@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class ArvoreBinaria<T extends Comparable> implements Serializable {
+public class ArvoreBinariaAVL<T extends Comparable> implements Serializable {
 
      /*     Compare to
             -1 quando a < b
@@ -13,20 +13,23 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
     private No<T> r;
 
     //Construtor
-    public ArvoreBinaria() {
+    public ArvoreBinariaAVL() {
         r = null;
     }
+
+
+    // -------------------------- ARVORE BINARIA BALANCEADA ----------------------//
+    // -------------------- Metodo para descobrir Altura da Arvore ---------------//
 
     public int altura(No<T> r) { // retorna a altura
         return r == null ? -1 : r.getAltura();
     }
 
-
-    public int calc_altura(No<T> r) {
+    public int arvBalancear(No<T> r) {
 
         if (r != null) {
-            int alturaDireita = calc_altura(r.getMaior()) + 1;
-            int alturaEsquerda = calc_altura(r.getMenor()) + 1;
+            int alturaDireita = arvBalancear(r.getMaior()) + 1;
+            int alturaEsquerda = arvBalancear(r.getMenor()) + 1;
             int diferenca = alturaDireita - alturaEsquerda;
             if (diferenca > 1 || diferenca < -1) {
                 System.out.println("Precisa balancear");
@@ -45,12 +48,13 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         }
         return 0;
     }
+
     // se for positivo (2)
-    public void rotacionarDireita(No<T> no){  //passar o no que esta desbalanceado
+    public void rotacionarDireita(No<T> no) {  //passar o no que esta desbalanceado
         // buscar o mais a direita da esquerda.
         No<T> maisDireita = maisDireita(r);
 
-        if (r.getNoPai()!= null){
+        if (r.getNoPai() != null) {
             No<T> auxNoPai = no.getNoPai();
         }
 
@@ -58,15 +62,15 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
     }
 
     // se for negativo (-2)
-    public void rotacionarEsquerda(No<T> r){
+    public void rotacionarEsquerda(No<T> r) {
 
     }
 
 
-    //-------------------------- Metodo Inserir OK -------------------------------------//
+    //-------------------------- METODO PARA INSERCAO -------------------------------------//
     public void inserir(T dado) {
         inserir(r, dado);
-        calc_altura(r);
+        arvBalancear(r);
     }
 
     private void inserir(No<T> noAtual, T dado) {
@@ -108,24 +112,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         }
     }
 
-    //----------------------------------- Metodo Busca (melhorado) ------------------------------------------------//
-    public boolean buscar(T dado) {
-        return buscar(r, dado);
-    }
-
-    private boolean buscar(No<T> r, T dado) {
-        if (r == null)
-            return false;
-
-        if (r.getDado().compareTo(dado) == 0)
-            return true;
-
-        if (r.getDado().compareTo(dado) >= 0)
-            return buscar(r.getMenor(), dado);
-
-        return buscar(r.getMaior(), dado);
-    }
-    //------------------------- Metodo de remocao com Problemas para remover - caso no cm 2 filhos ------------------//
+    //---------------------------- METODO PARA REMOCAO ----------------------------//
 
     public void remover(T dado) {
         //arvore está vazia
@@ -231,40 +218,22 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         }
     }
 
+    //-------------- METODOS AUXILIARES ---------------------//
 
-    //listar recursivamente
-    public void listarArvore() {
-        ListarCrescente(getR());
-    }
-
-    /*private void listarPreOrdem(No<T> no){
-        if( no != null){
-            System.out.println(no.getDado() + " ");
-            listarPreOrdem(no.getMenor());
-            listarPreOrdem(no.getMaior());
-        }
-    }*/
-
-    private void ListarCrescente(No<T> no) {
-        if (no != null) {
-            ListarCrescente(no.getMenor());
-            System.out.println(no.getDado() + " ");
-            ListarCrescente(no.getMaior());
-        }
-    }
-
-    //----------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------//
     // Método de pesquisa
     // Menor, procurar o maior.
 
-    //----------------------------------------------------------------------------------------------------
-/*    private No<T> maisDireita(No<T> aux) {
+    //-------------------------------------------------------//
+
+    /*private No<T> maisDireita(No<T> aux) {
         if (aux.getMaior() == null) {
             return aux;
         }
         return maisDireita(aux.getMaior());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }*/
+
     private No<T> maisDireita(No<T> aux) {
         if (aux.getMaior() == null) {
             return aux;
@@ -280,6 +249,7 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         return maisEsquerda(aux.getMenor());
         //return aux.getMaior()==null?aux:maisDireita(aux.getMaior());
     }
+
     //ALTERACOES NESTES METODOS PARA PEGAR A REFERENCIA DO ANTERIOR DO
     //ULTIMO NO AO PERCORRER A EXTREMA DIREITA OU ESQUERDA
 
@@ -302,6 +272,48 @@ public class ArvoreBinaria<T extends Comparable> implements Serializable {
         return anterior;
     }
 
+    //----------------- Metodo Busca (melhorado) -----------------//
+    public boolean buscar(T dado) {
+        return buscar(r, dado);
+    }
+
+    private boolean buscar(No<T> r, T dado) {
+        if (r == null)
+            return false;
+
+        if (r.getDado().compareTo(dado) == 0)
+            return true;
+
+        if (r.getDado().compareTo(dado) >= 0)
+            return buscar(r.getMenor(), dado);
+
+        return buscar(r.getMaior(), dado);
+    }
+
+    //-------- Listar Arvore -----------//
+
+    //listar recursivamente
+    public void listarArvore() {
+        ListarCrescente(getR());
+    }
+
+    /*private void listarPreOrdem(No<T> no){
+        if( no != null){
+            System.out.println(no.getDado() + " ");
+            listarPreOrdem(no.getMenor());
+            listarPreOrdem(no.getMaior());
+        }
+    }*/
+
+    private void ListarCrescente(No<T> no) {
+        if (no != null) {
+            ListarCrescente(no.getMenor());
+            System.out.println(no.getDado() + " ");
+            ListarCrescente(no.getMaior());
+        }
+    }
+
+    //---------------- OUTROS --------------------//
 
     public No<T> getR() {
         return r;
