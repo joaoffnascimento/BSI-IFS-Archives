@@ -27,6 +27,7 @@ public class No<T extends Comparable> implements Serializable {
     public No(T dado, No<T> anterior) {
         this.dado = dado;
         this.noPai = anterior;
+
     }
 
 

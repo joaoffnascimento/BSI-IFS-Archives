@@ -20,57 +20,120 @@ public class ArvoreBinariaAVL<T extends Comparable> implements Serializable {
 
     // -------------------------- ARVORE BINARIA BALANCEADA ----------------------//
     // -------------------- Metodo para descobrir Altura da Arvore ---------------//
+    // --------------------------- Verificar balanceamento -----------------------//
+    // ------------------------------ Fazer as rotacoes --------------------------//
 
     public int altura(No<T> r) { // retorna a altura
         return r == null ? -1 : r.getAltura();
     }
 
-    public int arvBalancear(No<T> r) {
+    public void verificarBalanceamento(No<T> atual) {
+        setBalanceamento(atual);
+        int balanceamento = atual.getAltura();
 
-        if (r != null) {
-            int alturaDireita = arvBalancear(r.getMaior()) + 1;
-            int alturaEsquerda = arvBalancear(r.getMenor()) + 1;
-            int diferenca = alturaDireita - alturaEsquerda;
-            if (diferenca > 1 || diferenca < -1) {
-                System.out.println("Precisa balancear");
+        if (balanceamento == -2) {
 
-                if (diferenca < 0) {
+            if (altura(atual.getMenor().getMenor()) >= altura(atual.getMenor().getMaior())) {
+                atual = rotacaoDireita(atual);
 
-                } else {
-                    rotacionarEsquerda(r);
-                }
-            }
-            if (alturaDireita > alturaEsquerda) {
-                return alturaDireita;
             } else {
-                return alturaEsquerda;
+                atual = duplaRotacaoEsquerdaDireita(atual);
+            }
+
+        } else if (balanceamento == 2) {
+
+            if (altura(atual.getMaior().getMaior()) >= altura(atual.getMaior().getMenor())) {
+                atual = rotacaoEsquerda(atual);
+
+            } else {
+                atual = duplaRotacaoDireitaEsquerda(atual);
             }
         }
-        return 0;
+
+        if (atual.getNoPai() != null) {
+            verificarBalanceamento(atual.getNoPai());
+        } else {
+            this.r = atual;
+        }
     }
 
-    // se for positivo (2)
-    public void rotacionarDireita(No<T> no) {  //passar o no que esta desbalanceado
-        // buscar o mais a direita da esquerda.
-        No<T> maisDireita = maisDireita(r);
+    private void setBalanceamento(No no) {
+        no.setAltura(altura(no.getMaior()) - altura(no.getMenor()));
+    }
 
-        if (r.getNoPai() != null) {
-            No<T> auxNoPai = no.getNoPai();
+    public No<T> rotacaoEsquerda(No<T> inicial) {
+
+        No<T> direita = inicial.getMaior();
+        direita.setNoPai(inicial.getNoPai());
+
+        inicial.setMaior(direita.getMenor());
+
+        if (inicial.getMaior() != null) {
+            inicial.getMaior().setNoPai(inicial);
         }
 
-        No<T> aux = no; //armazenar o NO
+        direita.setMenor(inicial);
+        inicial.setNoPai(direita);
+
+        if (direita.getNoPai() != null) {
+
+            if (direita.getNoPai().getMaior() == inicial) {
+                direita.getNoPai().setMaior(direita);
+
+            } else if (direita.getNoPai().getMenor() == inicial) {
+                direita.getNoPai().setMaior(direita);
+            }
+        }
+
+        setBalanceamento(inicial);
+        setBalanceamento(direita);
+
+        return direita;
     }
 
-    // se for negativo (-2)
-    public void rotacionarEsquerda(No<T> r) {
+    public No rotacaoDireita(No<T> inicial) {
 
+        No<T> esquerda = inicial.getMenor();
+        esquerda.setNoPai(inicial.getNoPai());
+
+        inicial.setMenor(esquerda.getMaior());
+
+        if (inicial.getMenor() != null) {
+            inicial.getMenor().setNoPai(inicial);
+        }
+
+        esquerda.setMaior(inicial);
+        inicial.setNoPai(esquerda);
+
+        if (esquerda.getNoPai() != null) {
+
+            if (esquerda.getNoPai().getMaior() == inicial) {
+                esquerda.getNoPai().setMaior(esquerda);
+
+            } else if (esquerda.getNoPai().getMenor() == inicial) {
+                esquerda.getNoPai().setMenor(esquerda);
+            }
+        }
+
+        setBalanceamento(inicial);
+        setBalanceamento(esquerda);
+
+        return esquerda;
     }
 
+    public No duplaRotacaoEsquerdaDireita(No<T> inicial) {
+        inicial.setMenor(rotacaoEsquerda(inicial.getMenor()));
+        return rotacaoDireita(inicial);
+    }
+
+    public No duplaRotacaoDireitaEsquerda(No<T> inicial) {
+        inicial.setMaior(rotacaoDireita(inicial.getMaior()));
+        return rotacaoEsquerda(inicial);
+    }
 
     //-------------------------- METODO PARA INSERCAO -------------------------------------//
     public void inserir(T dado) {
         inserir(r, dado);
-        arvBalancear(r);
     }
 
     private void inserir(No<T> noAtual, T dado) {
@@ -88,6 +151,8 @@ public class ArvoreBinariaAVL<T extends Comparable> implements Serializable {
 
                 if (noAtual.getMenor() != null) {
                     inserir(noAtual.getMenor(), dado);
+                    verificarBalanceamento(noAtual);
+
                 } else {
                     //Novo no a esquerda com as devidas referencias
                     noAtual.setMenor(new No<>(dado));
@@ -101,6 +166,7 @@ public class ArvoreBinariaAVL<T extends Comparable> implements Serializable {
 
                 if (noAtual.getMaior() != null) {
                     inserir(noAtual.getMaior(), dado);
+                    verificarBalanceamento(noAtual);
                 } else {
                     //Novo no a direita com as devidas referencias
                     noAtual.setMaior(new No<>(dado));
@@ -124,6 +190,7 @@ public class ArvoreBinariaAVL<T extends Comparable> implements Serializable {
             this.r = null;
         } else {
             remover(this.getR(), null, dado);
+            verificarBalanceamento(r);
         }
     }
 
