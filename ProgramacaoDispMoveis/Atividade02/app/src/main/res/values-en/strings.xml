@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Vital Signs</string>
+    <string name="pressao">Blood Pressure</string>
+    <string name="batimentos">Beats</string>
+    <string name="temperatura">Temperature</string>
+    <string name="nome">Patient Name</string>
+    <string name="numeroLeito">Bed Number</string>
+    <string name="salvar">Save</string>
+</resources>
