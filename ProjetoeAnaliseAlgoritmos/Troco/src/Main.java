@@ -11,11 +11,11 @@ public class Main {
         //Parte referente a validacao das entradas
         do{
             v = read.nextInt();
-        }while ((v < 0) || (v > Math.pow(10, 5)));
+        }while ((v <= 0) || (v > Math.pow(10, 5)));
 
         do{
             m = read.nextInt();
-        }while ((m < 0)||(m > Math.pow(10, 3)));
+        }while ((m <= 0)||(m > Math.pow(10, 3)));
         //Math.pow(x, y);
 
         Mi = new int[1000000];
